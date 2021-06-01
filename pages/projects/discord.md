@@ -37,6 +37,8 @@ ___
 
 !help for info in chat on the commands
 
+!stats for some dope stats
+
 
 ```
 
