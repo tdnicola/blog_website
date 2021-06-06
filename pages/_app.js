@@ -1,57 +1,33 @@
-import 'nextra-theme-blog/style.css'
-import Head from 'next/head'
-import mailgo from 'mailgo'
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import '@/css/tailwind.css'
+
 import { ThemeProvider } from 'next-themes'
-import * as ga from '../lib/index'
+import { DefaultSeo } from 'next-seo'
+import { useEffect } from "react";
 
-import '../styles/main.css'
+import Head from 'next/head'
 
-const mailGoConfig = {
+import { SEO } from '@/components/SEO'
+import LayoutWrapper from '@/components/LayoutWrapper'
+
+import mailgo from 'mailgo'
+
+const mailgoConfig = {
   dark: true,
-}
+};
 
-export default function Nextra({ Component, pageProps }) {
-  const router = useRouter()
-
+export default function App({ Component, pageProps }) {
   useEffect(() => {
-    mailgo(mailGoConfig)
-    
-    const handleRouteChange = (url) => {
-      ga.pageview(url)
-    }
-    //When the component is mounted, subscribe to router changes
-    //and log those page views
-    router.events.on('routeChangeComplete', handleRouteChange)
-
-    // If the component is unmounted, unsubscribe
-    // from the event with the `off` method
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
-
+    mailgo(mailgoConfig);
+  }, []);
   return (
-    <>
+    <ThemeProvider attribute="class">
       <Head>
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="RSS"
-          href="/feed.xml"
-        />
-        <link
-          rel="preload"
-          href="/fonts/Inter-roman.latin.var.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
-        {/* <ThemeProvider attribute="class"> */}
-          <Component {...pageProps} />
-        {/* </ThemeProvider> */}
-    </>
+      <DefaultSeo {...SEO} />
+      <LayoutWrapper>
+        <Component {...pageProps} />
+      </LayoutWrapper>
+    </ThemeProvider>
   )
 }
