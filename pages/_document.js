@@ -12,12 +12,29 @@ class MyDocument extends Document {
       description: 'Tony Nicola portfolio and blog site.',
       image:
         '/public/profileOpen.png',
-      // content: 'Tony Nicola, python, developer, javascript, SQL, Data Analyst, Web developer, Portfolio, Remote, Automation'
     }
 
     return (
       <Html lang="en">
         <Head>
+
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
           <meta name="robots" content="follow, index" />
           <meta name="description" content={meta.description} />
           <meta property="og:site_name" content={meta.title} />

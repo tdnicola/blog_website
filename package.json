@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "gray-matter": "^4.0.2",
+    "mailgo": "^0.12.1",
     "next": "latest",
+    "next-themes": "^0.0.14",
     "nextra": "^0.4.4",
     "nextra-theme-blog": "^0.1.5",
     "react": "^17.0.2",
