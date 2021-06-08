@@ -16,9 +16,9 @@ img.image-hover {
 }
 .imageBorder {
   position: relative;
-  /* width: 300px;  */
-  /* max-width: 100%; */
   margin: 0 auto;
+  border: 3px solid white;
+  border-radius: 50%;
   }
 
   .imageBorder img.image-hover {

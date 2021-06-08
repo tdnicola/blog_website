@@ -5,10 +5,10 @@
   "description": "A blog created with Next.js and Tailwind.css",
   "language": "en-us",
   "siteUrl": "https://tonynicola.com",
-  "image": "/static/images/profileOpen.png",
+  "image": "/static/images/profile.png",
   "email": "tdnicola@gmail.com",
   "github": "https://github.com/tdnicola",
   "linkedin": "https://www.linkedin.com/in/tony-nicola/",
   "locale": "en-US",
-  "openImage": "/static/images/profile.png"
+  "openImage": "/static/images/profileOpen.png"
 }
