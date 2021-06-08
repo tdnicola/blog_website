@@ -14,6 +14,15 @@ summary: 'Discord bot that takes various commands to interact with APIS'
 
 #### This little project started as something to insult friends with a random api. It since has become a fun project that quickly grew into much more. I use it to learn and try new concepts while adding new features to the bot.
 
+
+Problem ❓:  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wanted to spice up a discord channel with some burns to players. 
+
+Solution ✔️:  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Discord bot that quickly transformed into interacting with many APIS.
+
 ___
 <dl>
   <dt>Some highlights and things I've learned from this bot:</dt>
@@ -67,3 +76,5 @@ https://discordapp.com/api/oauth2/authorize?client_id=613364681750609943&permiss
 ###### _If you wanted to clone and run yourself to work with it you would need to pull the emoji id you would like it to search for to move the message. Feel free to email me if you have questions or are trying to do something yourself similiar, this one took me a little bit._
 
 deployed on heroku
+
+> ## [code:](https://github.com/tdnicola/discord_insult-bot)  
