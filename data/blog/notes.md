@@ -1,6 +1,6 @@
 ---
 title: My note system
-date: '6/5/21'
+date: '2021-06-05'
 tags: ['notes', 'organization']
 draft: false
 summary: 'The ever changing, always evolving note system.'
@@ -36,7 +36,7 @@ Now that I've become more aware of it I've started using a little b
 >
 > 3. Transfer to computer/notion to bookmark 💻
 
-This allows me to categorize and develope the note/idea a bit further. It makes me realize how many notes I need to go back through in my notebooks to develop and categorize.
+This allows me to categorize and develop the note/idea a bit further. It makes me realize how many notes I need to go back through in my notebooks to develop and categorize.
 
 Recently I started using Notion for personal/work and that is another whole system...
 
