@@ -40,16 +40,16 @@ export default function About() {
               I am a Data Analyst that is having fun learning to automate things.
             </p>
             <p>
-              Webdev boot camp grad turned Data Analyst. It took me a whole bootcamp to learn maybe I didn't like web development as I thought I would. I spent way too much time trying to center overlapping images (like this site hint hint)... But I really enjoyed coding. A conundrum...
+              Webdev boot camp grad turned Data Analyst. It took me a whole bootcamp to learn maybe I didn't like web development as much as I thought I would. I spent way too much time trying to center overlapping images (like this site hint hint)... But I really enjoyed coding and messing around with problem solving things. A conundrum...
             </p>
             <p>
-              How can I still code and make my job more efficient? a win win? I quickly grew to enjoy coding in Python for it's versatility and vast ability to automate tasks.
+              Currently using SQL and python to help solve questions about data. I enjoy coding in Python for it's versatility and vast ability to automate tasks.
             </p>
             <p>
               I'm using this website as a way to keep track and explain problems I've encountered or am having. If you have any questions on any of these projects I'd love to chat about it.
             </p>
             <p>
-              In addition to programming, I enjoy practicing Brazilian Jiu Jitsu, pc gaming, and experimenting with home automation.
+              In addition to programming, I enjoy practicing Brazilian Jiu Jitsu, pc gaming, and exploring the PNW.
             </p>
           </div>
         </div>

@@ -9,13 +9,13 @@ summary: 'Python to scrape library lists'
 
 # Python/node library list scraping during covid
 
-Check it out at: [Library Lists](tdnicola.github.io/librarylist/)
+Check it out at: [Library Lists](https://tdnicola.github.io/libraryList/)
 
 > Python script to scrape private lists. Collect the information and post to a public site.
 
 Problem ❓:  
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Librarian wanted a way to post her library lists from [pueblolibrary.org](www.pueblolibrary.org) that were private to a public site for all to see during the covid shutdown.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Librarian wanted a way to post her library lists from [pueblolibrary.org](https://www.pueblolibrary.org) that were private to a public site for all to see during the covid shutdown.
 
 
 Solution ✔️:  
@@ -33,4 +33,4 @@ This was a fun python script to write. It needs to be refactored and set to run 
 
 
 > ## [code:](https://github.com/tdnicola/libraryList)  
-> ## [site:](tdnicola.github.io/librarylist/)  
+> ## [site:](https://tdnicola.github.io/libraryList/)  

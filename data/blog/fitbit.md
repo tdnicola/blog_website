@@ -9,7 +9,7 @@ summary: 'See your FitBit data in a new way..'
 
 ## FitBit data
 
-Check it out at: [github fitbit](tdnicola.github.io/fitbit_api/)
+Check it out at: [github fitbit](https://tdnicola.github.io/Fitbit_api/)
 
 > Web app for displaying personal Fitbit data. Or Guest Data if no fitbit login.
 
@@ -65,4 +65,4 @@ npm start
 
 
 > ## [code:](https://github.com/tdnicola/Fitbit_api)  
-> ## [site:](tdnicola.github.io/fitbit_api/)  
+> ## [site:](https://tdnicola.github.io/Fitbit_api/)  
