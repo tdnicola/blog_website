@@ -37,13 +37,10 @@ export default function About() {
           </div>
           <div className="pt-8 pb-8 prose dark:prose-dark max-w-none xl:col-span-2">
             <p>
-              I am a Data Analyst that is having fun learning to automate things.
+              I enjoy solving problems and learning to automate things.
             </p>
             <p>
-              Webdev boot camp grad turned Data Analyst. It took me a whole bootcamp to learn maybe I didn't like web development as much as I thought I would. I spent way too much time trying to center overlapping images (like this site hint hint)... But I really enjoyed coding and messing around with problem solving things. A conundrum...
-            </p>
-            <p>
-              Currently using SQL and python to help solve questions about data. I enjoy coding in Python for it's versatility and vast ability to automate tasks.
+              Currently a Data Analyst working in the 340B Healthcare industry helping clients to reach more patients. I use SQL and python to help solve questions about data. I enjoy coding in Python for it's versatility and vast ability to automate tasks.
             </p>
             <p>
               I'm using this website as a way to keep track and explain problems I've encountered or am having. If you have any questions on any of these projects I'd love to chat about it.
