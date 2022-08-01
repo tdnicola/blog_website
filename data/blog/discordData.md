@@ -7,12 +7,15 @@ draft: false
 summary: 'Discord bot that takes various commands to interact with APIS'
 ---
 
-
-# Discord bot that insults/praises + more to your friends. 
+# Discord bot that insults/praises + more to your friends.
 
 ## Throw a random insult/praise or just spice it up with a random/searched gif.
 
-#### This little project started as something to insult friends with a random api. It since has become a fun project that quickly grew into much more. I use it to learn and try new concepts while adding new features to the bot.
+## Invite?
+
+https://discordapp.com/api/oauth2/authorize?client_id=613364681750609943&permissions=0&scope=bot
+
+#### This little project started as something to insult friends with a random api. It since has become a fun project. I use it to learn and try new concepts while adding new features to the bot.
 
 
 Problem ❓:  
@@ -30,6 +33,7 @@ ___
   <dd>5 different API's (insult, praise, gif, cowspeak, 8ball)</dd>
   <dd>PostgreSQL queries to update and get statistics of bot</dd>
   <dd>Learned/implemented about object oriented programming and polymorphism on statistics.js</dd>
+  <dd>Learned/implemented a command handler for ease of adding commands and just general code viewing</dd>
 </dl>
 
 ```
@@ -45,35 +49,56 @@ ___
 
 !8ball question
 
-!move to move a message (configure info below)
+!timer 5 mins
 
-!help for info in chat on the commands
+!comment hey can we add this feature?
 
-!stats for some dope stats
+!help for a list of commands
 
 
 ```
 
 API links:
 
-* ~~[Insults](https://rapidapi.com/Lakerolmaker/api/insult-generator/endpoints)~~ No longer works
 * [Insults](https://insult.mattbas.org/api/insult)
 * [Praises](https://complimentr.com/api)
 * [Gifs](https://api.giphy.com/v1/gifs/random)
 * [CowSay](http://cowsay.morecode.org/)
 * [8Ball](https://8ball.delegator.com/)
 
+## Requirements
 
-Invite?
+1. [Need Node.js and Discord.js installed](https://discordjs.guide/preparations/#installing-node-js)
+2. Create discord account for your bot and add it to your server. Add token to config.json
 
-https://discordapp.com/api/oauth2/authorize?client_id=613364681750609943&permissions=0&scope=bot
+## Installation
 
+1. git clone https://github.com/tdnicola/discord_insult-bot
+2. npm i
+3. update config.json file with tokens:
 
-###### _!move requires some configuring to work and most likely won't work on the live version because right now it is specific to each server (emoji id)._
+-   Token: discord bot token
+-   Prefix: currently !
+-   Giftoken: giphy token
+-   ConnectionString: heroku postgres string (if wanted to your own tracking. Would have to set up own server)
 
-###### _Currently when called with !move it will search the last 20 messages in the channel it is called for an emoji (that you specify) on the message you would like to move. If no terms come after !move it defaults to move item to 'general' chat. if a term is after !move it searches for that channel to move to. !move chat will search the last 20 messages for the emoji id, if found it will move the message to the 'chat' channel._
+4. comment out stat api calls if no need for tracking stats
+5. node bot.js
 
-###### _If you wanted to clone and run yourself to work with it you would need to pull the emoji id you would like it to search for to move the message. Feel free to email me if you have questions or are trying to do something yourself similiar, this one took me a little bit._
+#### Current Stats 7/31/22:
+
+###### Currently on 38 servers
+
+| Command                     | Counts |
+| --------------------------- | ------ |
+| Insults:                    | 581    |
+| Praises:                    | 379    |
+| Gifs:                       | 638    |
+| CowSpeaks:                  | 99     |
+| Thanks given:               | 6      |
+| 8Balls:                     | 103    |
+| Incorrect channels (noobs): | 9      |
+
 
 deployed on heroku
 
