@@ -40,7 +40,8 @@ export default function About() {
               I enjoy solving problems and learning to automate things.
             </p>
             <p>
-              Currently a Data Analyst working in the 340B Healthcare industry helping clients to reach more patients. I use SQL and python to help solve questions about data. I enjoy coding in Python for it's versatility and vast ability to automate tasks.
+              Currently an ETL developer working in the 340B Healthcare industry helping clients to reach more patients. I use SQL and python to help solve problems with data. I enjoy coding in Python for it's versatility and vast ability to automate tasks. 
+              I've recently started learning how to integrate SSIS into my workflow.
             </p>
             <p>
               I'm using this website as a way to keep track and explain problems I've encountered or am having. If you have any questions on any of these projects I'd love to chat about it.
