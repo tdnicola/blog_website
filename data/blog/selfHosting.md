@@ -26,4 +26,6 @@ I've got a small home server that primarily runs a plex movie server. I'm wonder
 
 The problem that I'm having is if it somehow crashes I'd like for the process to restart it self and keep itself running. I think this can easily be obtained with some bash scripting but that is also something that I'd have to learn.
 
-I think I'll reply back when I figure that part out.
+With changing it to locally it also brings more questions on the data side of things. It currently uses postgres to just track the amount of times a command has been called. Super basic. But do I want to rebuild that and see who makes the most calls? What server uses it the most? If I'm going to redo the database side do I just want to completely redo it? It's not super indepth but do I really want that info?
+
+I think I'll report back when I figure these out..
