@@ -9,32 +9,34 @@ summary: 'Discord bot that takes various commands to interact with APIS'
 
 # Discord bot that insults/praises + more to your friends.
 
+![Robots are taking over](https://upload.wikimedia.org/wikipedia/commons/c/cd/HAL9000_I%27m_Sorry_Dave_Motivational_Poster.jpg)
+
 ## Throw a random insult/praise or just spice it up with a random/searched gif.
 
-## Invite?
+## [Discord Invite Link](https://discordapp.com/api/oauth2/authorize?client_id=613364681750609943&permissions=0&scope=bot)
 
-https://discordapp.com/api/oauth2/authorize?client_id=613364681750609943&permissions=0&scope=bot
+Problem ❓:
 
-#### This little project started as something to insult friends with a random api. It since has become a fun project. I use it to learn and try new concepts while adding new features to the bot.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wanted to spice up a discord channel with some burns to players. And also I mean learn how to code some stuff.
 
+Solution ✔️:
 
-Problem ❓:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Discord bot that quickly transformed into my favorite project.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wanted to spice up a discord channel with some burns to players. 
+---
 
-Solution ✔️:  
+I think any good way to continue to learn something is to have fun. You're much more motivated to continue to learn when you're having fun. An example where I learned that was math. I hated math in high school. It was so boring. I fucking sucked at it, I think I failed 3 years of it in highschool? My senior year I had to take a computer lab for math. They were like this guy is unteachable, let a computer teach him.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Discord bot that quickly transformed into interacting with many APIS.
+It's saying something if the computer lab was my favorite way to learn math.. It wasn't until college (I had to basically build my way with remedial math courses to get to college algebra) until I found out that math isn't that boring. The teachers that taught math were awful. They sucked at teaching it more than I sucked at learning it.
 
-___
-<dl>
-  <dt>Some highlights and things I've learned from this bot:</dt>
+When someone is a good teacher you want to learn anything from them. I wish I could remember his name but my college algebra teacher was amazing. He talked about zombies, used pirates as examples, talked about movies. ALL in examples with math. This dude was a godsend in the math teaching world for me. I passed, and not only passed I enjoyed it. I remember writing a letter to him explaining how much of a good teacher he was to me. All because he made it fun. I try to keep that philosophy when learning new things, keep it fun and you will want to keep going at it. No one want's to suck at learning something.
 
-  <dd>5 different API's (insult, praise, gif, cowspeak, 8ball)</dd>
-  <dd>PostgreSQL queries to update and get statistics of bot</dd>
-  <dd>Learned/implemented about object oriented programming and polymorphism on statistics.js</dd>
-  <dd>Learned/implemented a command handler for ease of adding commands and just general code viewing</dd>
-</dl>
+##### Some highlights and things I've learned from this bot:
+
+1. 5 different API's (insult, praise, gif, cowspeak, 8ball). Honestly if you know 1 API you know how to do it...
+2. PostgreSQL queries to update and get statistics of bot usage.
+3. Learned/implemented about object oriented programming and polymorphism on statistics.js.
+4. Learned/implemented a command handler for ease of adding commands and just general code viewing.
 
 ```
 !insult @person
@@ -51,6 +53,10 @@ ___
 
 !timer 5 mins
 
+!choose this or that?
+
+!poll Which number is better? +1 +2
+
 !comment hey can we add this feature?
 
 !help for a list of commands
@@ -60,11 +66,11 @@ ___
 
 API links:
 
-* [Insults](https://insult.mattbas.org/api/insult)
-* [Praises](https://complimentr.com/api)
-* [Gifs](https://api.giphy.com/v1/gifs/random)
-* [CowSay](http://cowsay.morecode.org/)
-* [8Ball](https://8ball.delegator.com/)
+- [Insults](https://insult.mattbas.org/api/insult)
+- [Praises](https://complimentr.com/api)
+- [Gifs](https://api.giphy.com/v1/gifs/random)
+- [CowSay](http://cowsay.morecode.org/)
+- [8Ball](https://8ball.delegator.com/)
 
 ## Requirements
 
@@ -77,29 +83,28 @@ API links:
 2. npm i
 3. update config.json file with tokens:
 
--   Token: discord bot token
--   Prefix: currently !
--   Giftoken: giphy token
--   ConnectionString: heroku postgres string (if wanted to your own tracking. Would have to set up own server)
+- Token: discord bot token
+- Prefix: currently !
+- Giftoken: giphy token
+- ConnectionString: heroku postgres string (if wanted to your own tracking. Would have to set up own server)
 
 4. comment out stat api calls if no need for tracking stats
 5. node bot.js
 
-#### Current Stats 7/31/22:
+#### Current Stats 10/23/22:
 
-###### Currently on 38 servers
+###### Currently on 47 servers
 
 | Command                     | Counts |
 | --------------------------- | ------ |
-| Insults:                    | 581    |
-| Praises:                    | 379    |
-| Gifs:                       | 638    |
-| CowSpeaks:                  | 99     |
+| Insults:                    | 740    |
+| Praises:                    | 439    |
+| Gifs:                       | 687    |
+| CowSpeaks:                  | 103    |
 | Thanks given:               | 6      |
-| 8Balls:                     | 103    |
+| 8Balls:                     | 140    |
 | Incorrect channels (noobs): | 9      |
-
 
 deployed on heroku
 
-> ## [code:](https://github.com/tdnicola/discord_insult-bot)  
+> ## [code:](https://github.com/tdnicola/discord_insult-bot)

@@ -10,15 +10,15 @@ module.exports = {
       spacing: {
         '9/16': '56.25%',
       },
-      outline:{
+      outline: {
         white: '3px solid white',
-        black: '3px solid black'
+        black: '3px solid black',
       },
       rounded: {
-        full: 'border-radius: 50%;'
+        full: 'border-radius: 50%;',
       },
-      borderRadius:{
-        'circle': '50%'
+      borderRadius: {
+        circle: '50%',
       },
       lineHeight: {
         11: '2.75rem',
