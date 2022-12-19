@@ -39,27 +39,25 @@ When someone is a good teacher you want to learn anything from them. I wish I co
 4. Learned/implemented a command handler for ease of adding commands and just general code viewing.
 
 ```
-!insult @person
+/insult @person
 
-!praise @person
+/praise @person
 
-!gif
+/gif
 
-!gif searchterm
+/gif searchterm
 
-!moo sentence
+/moo sentence
 
-!8ball question
+/timer 5 mins
 
-!timer 5 mins
+/choose this or that?
 
-!choose this or that?
+/poll Which number is better? +1 +2
 
-!poll Which number is better? +1 +2
+/comment hey can we add this feature?
 
-!comment hey can we add this feature?
-
-!help for a list of commands
+/help for a list of commands
 
 
 ```
@@ -70,7 +68,7 @@ API links:
 - [Praises](https://complimentr.com/api)
 - [Gifs](https://api.giphy.com/v1/gifs/random)
 - [CowSay](http://cowsay.morecode.org/)
-- [8Ball](https://8ball.delegator.com/)
+- ~~[8Ball](https://8ball.delegator.com/)~~ Killed by heroku
 
 ## Requirements
 
@@ -84,27 +82,27 @@ API links:
 3. update config.json file with tokens:
 
 - Token: discord bot token
-- Prefix: currently !
+- Prefix: currently ! -- Moved to slash commands 12/19/22
 - Giftoken: giphy token
 - ConnectionString: heroku postgres string (if wanted to your own tracking. Would have to set up own server)
 
 4. comment out stat api calls if no need for tracking stats
 5. node bot.js
 
-#### Current Stats 10/23/22:
+#### Final Heroku Postgres Stats 12/5/22: -RIP
 
 ###### Currently on 47 servers
 
 | Command                     | Counts |
 | --------------------------- | ------ |
-| Insults:                    | 740    |
-| Praises:                    | 439    |
-| Gifs:                       | 687    |
-| CowSpeaks:                  | 103    |
+| Insults:                    | 804    |
+| Praises:                    | 446    |
+| Gifs:                       | 704    |
+| CowSpeaks:                  | 107    |
 | Thanks given:               | 6      |
-| 8Balls:                     | 140    |
+| 8Balls:                     | 146    |
 | Incorrect channels (noobs): | 9      |
 
-deployed on heroku
+~~deployed on heroku~~ Local home server
 
 > ## [code:](https://github.com/tdnicola/discord_insult-bot)

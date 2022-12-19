@@ -11,11 +11,6 @@ Problem ❓:
 Solution ✔️:
 
 ```sql
-    select * from Openquery(SALESFORCE, 'select * from Account') x
-    join [salesforce backups]..account a
-                    on x.patient__c = a.id
-                    and a.recordtypeid = '0128'
-    where a.Patient_Lead_Stage__c = 'Lead class'
 
 
     /*Insert into new table*/
@@ -30,10 +25,10 @@ Solution ✔️:
     (
         ID nvarchar(50),
         name nvarchar(50)
-        )
+    )
 
 
-    /*Insert into exisiting table*/
+    /*Insert into existing table*/
     insert into #table ( id, name)
     select id, name
     from account
@@ -78,6 +73,13 @@ Solution ✔️:
     delete
     from ghostAccountMatches
     where id = '00T2T000'
+
+    /*OpenQuery template joined*/
+    select * from Openquery(SALESFORCE, 'select * from Account') x
+    join [salesforce backups]..account a
+        on x.patient__c = a.id
+        and a.recordtypeid = '0128'
+    where a.Patient_Lead_Stage__c = 'Lead class'
 
 
 

@@ -29,3 +29,7 @@ The problem that I'm having is if it somehow crashes I'd like for the process to
 With changing it to locally it also brings more questions on the data side of things. It currently uses postgres to just track the amount of times a command has been called. Super basic. But do I want to rebuild that and see who makes the most calls? What server uses it the most? If I'm going to redo the database side do I just want to completely redo it? It's not super indepth but do I really want that info?
 
 I think I'll report back when I figure these out..
+
+Update: 12/19/22:
+
+I've been using [PM2](https://app.pm2.io) to keep the discord server up on my local server. Has been working like a charm. Still have not replaced the postgres server. That will be my next step. But alas insult bot is alive again!!
