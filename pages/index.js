@@ -38,18 +38,25 @@ export default function About() {
             </div>
           </div>
           <div className="pt-8 pb-8 prose dark:prose-dark max-w-none xl:col-span-2">
-            <p>I enjoy solving problems and learning to automate things.</p>
             <p>
-              Currently an ETL developer working in the 340B Healthcare industry helping clients to
-              reach more patients. I use SQL and python to help solve problems with data. I enjoy
-              coding in Python for it's versatility and vast ability to automate tasks. I've
-              recently started learning how to integrate SSIS into my workflow.
+              Hello, my name is Tony Nicola and I am an ETL developer with a focus on automating
+              tasks in the 340B healthcare industry. I have a strong background in using SSIS, SQL,
+              Python, and JavaScript to design and implement data pipelines that streamline data
+              extraction, transformation, and loading processes.
             </p>
+
             <p>
-              I'm using this website as a way to keep track and explain problems I've encountered or
-              am having. If you have any questions on any of these projects I'd love to chat about
-              it.
+              One of my passions is finding ways to automate repetitive and time-consuming tasks,
+              and I enjoy learning new technologies and tools that can help me achieve this goal.
             </p>
+
+            <p>
+              This website serves as a platform for me to document my progress, share my knowledge
+              and experience, and discuss the various projects and problems I have tackled in the
+              past. I hope that by sharing my work, I can help other developers and professionals
+              find new solutions and improve their own automation efforts.
+            </p>
+
             <p>
               In addition to programming, I enjoy practicing Brazilian Jiu Jitsu, pc gaming, and
               exploring the PNW.
