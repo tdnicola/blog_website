@@ -29,8 +29,8 @@ export default function About() {
             <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">
               {siteMetadata.author}
             </h3>
-            <div className="text-gray-500 dark:text-gray-400">Developer</div>
-            <div className="text-gray-500 dark:text-gray-400">Equiscript LLC</div>
+            <div className="text-gray-500 dark:text-gray-400">Data Engineer</div>
+            <div className="text-gray-500 dark:text-gray-400">CVS Health</div>
             <div className="flex pt-6 space-x-3">
               <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} />
               <SocialIcon kind="github" href={siteMetadata.github} />
@@ -58,8 +58,8 @@ export default function About() {
             </p>
 
             <p>
-              In addition to programming, I enjoy practicing Brazilian Jiu Jitsu, pc gaming, and
-              exploring the PNW.
+              In addition to programming, I enjoy practicing Brazilian Jiu Jitsu, pc gaming, 3d
+              printing, and exploring the PNW.
             </p>
           </div>
         </div>
