@@ -8,9 +8,14 @@ images: []
 ---
 
 Problem ❓:
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Random thoughts = random codes.
+
 Solution ✔️:
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Put those random codes in one place.
+
+---
 
 ```sql
 
