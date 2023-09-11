@@ -43,7 +43,6 @@ const LayoutWrapper = ({ children }) => {
           </div>
         </header>
         <main className="mb-auto">{children}
-          <Analytics/>
         </main>
         <Footer />
       </div>
