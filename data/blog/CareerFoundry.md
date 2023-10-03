@@ -1,6 +1,6 @@
 ---
 title: CareerFoundry thoughts and recap
-date: '10-03-23'
+date: '2023-10-03'
 tags: ['Coding', 'BootCamp', 'full-stack']
 draft: false
 summary: 'My years later thoughts on my full-stack coding boot camp'
