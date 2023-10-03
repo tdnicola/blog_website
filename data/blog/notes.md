@@ -1,6 +1,6 @@
 ---
 title: My note system
-date: 6/5/21
+date: 2021/06/05
 tags: ['notes', 'organization']
 draft: false
 summary: 'The ever changing, always evolving note system.'

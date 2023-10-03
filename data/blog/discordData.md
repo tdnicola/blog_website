@@ -1,6 +1,6 @@
 ---
 title: Discord insult bot
-date: 5/30/20
+date: 2020/05/30
 description: Discord bot that takes various commands to interact with APIS
 tags: ['web development', 'discord', 'api']
 draft: false

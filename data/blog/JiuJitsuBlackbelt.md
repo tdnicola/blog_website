@@ -1,6 +1,6 @@
 ---
 title: JiuJitsu Blackbelt
-date: 9/10/23
+date: 2023/09/10
 tags: ['BJJ', 'JiuJitsu']
 draft: false
 summary: 'My Brazilian Jiu-Jitsu Odyssey: White to Black Belt'

@@ -1,6 +1,6 @@
 ---
 title: AutoHotKey workflow
-date: 6/13/21
+date: 2021/06/13
 description: Current set up with AutoHotKey for work
 tags: ['automation', 'autohotkey']
 draft: false
