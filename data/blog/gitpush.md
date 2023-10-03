@@ -1,6 +1,6 @@
 ---
 title: Learn that Git
-date: 2021/05/30
+date: '2021-05-30'
 tags: ['git']
 draft: false
 summary: 'I need to learn git'

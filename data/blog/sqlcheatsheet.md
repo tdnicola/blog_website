@@ -1,6 +1,6 @@
 ---
 title: SQLCheatSheet
-date: 2023/06/03
+date: '2023-06-03'
 tags: ['SQL']
 draft: false
 summary:

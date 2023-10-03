@@ -1,6 +1,6 @@
 ---
 title: Fitbit application
-date: 2020/06/01
+date: '2020-06-01'
 description: See your FitBit data in a new way..
 tags: ['web development', 'FitBit', 'api']
 draft: false
