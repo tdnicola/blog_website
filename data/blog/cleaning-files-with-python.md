@@ -1,6 +1,6 @@
 ---
 title: Cleaning files with python
-date: '2021-06-24'
+date: 6/24/21
 tags: ['python', 'automation']
 draft: true
 summary: 'Learning how to clean txt/csv files with python.'

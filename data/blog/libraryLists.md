@@ -1,6 +1,6 @@
 ---
 title: Scraping library book lists for covid closures
-date: '2020-06-08'
+date: 6/8/20
 description: Scraping private library lists to post to a public site to be displayed for the closure of the pueblo library during covid shutdown.
 tags: ['web development', 'python', 'db', 'scraping', 'data']
 draft: false

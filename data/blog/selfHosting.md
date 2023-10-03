@@ -1,6 +1,6 @@
 ---
 title: End of an Discord bot era
-date: '2022-10-25'
+date: 10/25/22
 description: Heroku is removing free tier dynos. To self host or not?
 tags: ['web development', 'discord', 'api', 'hosting']
 draft: false
