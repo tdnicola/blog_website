@@ -8,19 +8,19 @@ summary: 'The ever changing, always evolving note system.'
 
 # Taking and developing notes.
 
-> I wouldn't call it an obsession.. 
+> I wouldn't call it an obsession..
 
 But I like to take notes. Recently I switched over from physical notes/notebooks to a smaller ipad with an apple pencil. It's been great. My main hiccup with paper notes is not having an easy way to search through them.
 
 ![The notebook obsession](/static/images/notes/notesPoll.png)
 
-This debate is one that Haley would tell you has been going on forever in my head.. There is just something about paper notes that you can't get with electronic notes..
+This debate is one that Haley would tell you has been going on forever in my head.. There is just something about paper notes that you can't get with electronic notes.
 
 I've been reading a book called: "How to Take Smart Notes" by Sönke Ahrens.
 
-I've heard a lot of people saying this book is "life changing" I wouldn't call it that but then again I don't heavily rely on my notes other than for fun. It did however bring up some holes in my note taking that is worth checking into.
+I've heard a lot of people saying this book is "life changing" I wouldn't call it that but then again I don't heavily rely on my notes other than for fun. It did however bring up some holes in my note taking that is worth checking into.
 
-The reason I felt like paper notes had no easy way to search through is because it didn't.. Once I put something in the notebook, be it a thought, a number, a sketch. I never went back to the idea. I'd always "check it later."
+The reason I felt like paper notes had no easy way to search through is because it didn't. Once I put something in the notebook, be it a thought, a number, a sketch. I never went back to the idea. I'd always "check it later."
 
 My previous note process was:
 

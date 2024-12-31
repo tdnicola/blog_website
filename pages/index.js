@@ -30,7 +30,7 @@ export default function About() {
               {siteMetadata.author}
             </h3>
             <div className="text-gray-500 dark:text-gray-400">Data Engineer</div>
-            <div className="text-gray-500 dark:text-gray-400">CVS Health</div>
+            <div className="text-gray-500 dark:text-gray-400">Palomar</div>
             <div className="flex pt-6 space-x-3">
               <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} />
               <SocialIcon kind="github" href={siteMetadata.github} />
@@ -39,27 +39,35 @@ export default function About() {
           </div>
           <div className="pt-8 pb-8 prose dark:prose-dark max-w-none xl:col-span-2">
             <p>
-              Hello, my name is Tony Nicola and I am an ETL developer with a focus on automating
-              tasks in the 340B healthcare industry. I have a strong background in using SSIS, SQL,
-              Python, and JavaScript to design and implement data pipelines that streamline data
-              extraction, transformation, and loading processes.
+              Hello, my name is Tony Nicola, and I’m a Data Engineer with a passion for automating
+              workflows and creating innovative data solutions. With a strong background in ETL
+              development and tools like SSIS, SQL, and Python. I specialize in designing and
+              implementing data pipelines that streamline the extraction, transformation, and
+              loading of data across diverse systems.
             </p>
 
             <p>
-              One of my passions is finding ways to automate repetitive and time-consuming tasks,
-              and I enjoy learning new technologies and tools that can help me achieve this goal.
+              Currently at Palomar, I focus on building robust data pipelines and integrating data
+              from various sources using tools such as Azure Synapse, DBT, Snowflake, and Python to
+              support advanced analytics. I thrive on collaborating with cross-functional teams,
+              translating complex technical concepts into actionable solutions, and aligning data
+              strategies with organizational goals.
             </p>
 
             <p>
-              This website serves as a platform for me to document my progress, share my knowledge
-              and experience, and discuss the various projects and problems I have tackled in the
-              past. I hope that by sharing my work, I can help other developers and professionals
-              find new solutions and improve their own automation efforts.
+              One of my core passions is identifying and automating repetitive tasks, allowing me to
+              explore and adopt new technologies that enhance efficiency and scalability. This
+              website serves as my creative outlet—a place where I document my progress, share my
+              experiences, and discuss the challenges and projects I’ve tackled. By sharing my work,
+              I hope to inspire and assist other developers in finding innovative ways to optimize
+              their processes.
             </p>
 
             <p>
-              In addition to programming, I enjoy practicing Brazilian Jiu Jitsu, pc gaming, 3d
-              printing, and exploring the PNW.
+              Outside of work, I enjoy practicing Brazilian Jiu-Jitsu, where I’ve earned a black
+              belt, exploring the Pacific Northwest, PC gaming, and diving into 3D printing
+              projects. Whether it’s refining a data pipeline or perfecting a new skill on the mat,
+              I’m constantly striving to improve, grow, and help others do the same.
             </p>
           </div>
         </div>
