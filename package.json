@@ -3,7 +3,7 @@
   "version": "0.3.4",
   "private": true,
   "scripts": {
-    "start": "cross-env TAILWIND_MODE=watch next-remote-watch ./data",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider TAILWIND_MODE=watch next-remote-watch ./data",
     "dev": "cross-env TAILWIND_MODE=watch next dev",
     "build": "next build && node ./scripts/generate-sitemap",
     "serve": "next start",
@@ -67,5 +67,8 @@
     "*.+(js|jsx|ts|tsx|json|css|md|mdx)": [
       "prettier --write"
     ]
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
