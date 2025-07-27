@@ -39,35 +39,33 @@ export default function About() {
           </div>
           <div className="pt-8 pb-8 prose dark:prose-dark max-w-none xl:col-span-2">
             <p>
-              Hello, my name is Tony Nicola, and I’m a Data Engineer with a passion for automating
-              workflows and creating innovative data solutions. With a strong background in ETL
-              development and tools like SSIS, SQL, and Python. I specialize in designing and
-              implementing data pipelines that streamline the extraction, transformation, and
-              loading of data across diverse systems.
+              Hey, I’m Tony Nicola, a data engineer by day, Brazilian Jiu-Jitsu hobbyist by evening,
+              and full-time dad with a mild obsession for automating everything (except bedtime
+              routines... those are non-negotiable).
             </p>
 
             <p>
-              Currently at Palomar, I focus on building robust data pipelines and integrating data
-              from various sources using tools such as Azure Synapse, DBT, Snowflake, and Python to
-              support advanced analytics. I thrive on collaborating with cross-functional teams,
-              translating complex technical concepts into actionable solutions, and aligning data
-              strategies with organizational goals.
+              By trade, I wrangle data into shape using tools like SQL, Python, Airflow, Snowflake,
+              and DBT. I specialize in building pipelines that move data cleanly from point A to
+              point B, ideally without catching fire. I currently work at Palomar, where I help
+              design systems that make teams say “oh thank god” instead of “who built this?”
             </p>
 
             <p>
-              One of my core passions is identifying and automating repetitive tasks, allowing me to
-              explore and adopt new technologies that enhance efficiency and scalability. This
-              website serves as my creative outlet—a place where I document my progress, share my
-              experiences, and discuss the challenges and projects I’ve tackled. By sharing my work,
-              I hope to inspire and assist other developers in finding innovative ways to optimize
-              their processes.
+              I get a weird amount of joy from eliminating repetitive tasks and streamlining
+              workflows. If a job feels like it should be automated, I’ll quietly script it, give it
+              a name, and set it loose to run in the background like a digital Roomba.
             </p>
 
             <p>
-              Outside of work, I enjoy practicing Brazilian Jiu-Jitsu, where I’ve earned a black
-              belt, exploring the Pacific Northwest, PC gaming, and diving into 3D printing
-              projects. Whether it’s refining a data pipeline or perfecting a new skill on the mat,
-              I’m constantly striving to improve, grow, and help others do the same.
+              This site is where I document what I’m building, breaking, fixing, or
+              over-engineering. Expect a mix of dev logs, side projects, and bad jokes embedded in
+              technical posts.
+            </p>
+            <p>
+              Outside the terminal, I’m usually doing something that involves grappling, hiking
+              around the Pacific Northwest, assembling tiny robots, or making something weird with
+              my 3D printer. Life is a string of small experiments, and I like to run a lot of them.
             </p>
           </div>
         </div>
