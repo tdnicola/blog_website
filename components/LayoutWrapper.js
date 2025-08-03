@@ -6,7 +6,6 @@ import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
-import { Analytics } from '@vercel/analytics/react'
 
 const LayoutWrapper = ({ children }) => {
   return (
@@ -42,8 +41,7 @@ const LayoutWrapper = ({ children }) => {
             <MobileNav />
           </div>
         </header>
-        <main className="mb-auto">{children}
-        </main>
+        <main className="mb-auto">{children}</main>
         <Footer />
       </div>
     </SectionContainer>
