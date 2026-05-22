@@ -45,27 +45,26 @@ export default function About() {
             </p>
 
             <p>
-              By trade, I wrangle data into shape using tools like SQL, Python, Airflow, Snowflake,
-              and DBT. I specialize in building pipelines that move data cleanly from point A to
-              point B, ideally without catching fire. I currently work at Palomar, where I help
-              design systems that make teams say “oh thank god” instead of “who built this?”
+              I wrangle data into shape using tools like SQL, Python, Airflow, Snowflake, and DBT. I
+              specialize in building pipelines that move data cleanly from point A to point B,
+              ideally without catching fire. I currently work at Palomar, where I help design
+              systems that make teams say “oh thank god” instead of “who built this?”
             </p>
 
             <p>
-              I get a weird amount of joy from eliminating repetitive tasks and streamlining
-              workflows. If a job feels like it should be automated, I’ll quietly script it, give it
-              a name, and set it loose to run in the background like a digital Roomba.
+              If a job feels like it should be automated, I'll script it and set it loose to run in
+              the background like a digital Roomba.
             </p>
 
             <p>
-              This site is where I document what I’m building, breaking, fixing, or
+              This site is where I document what I'm building, breaking, fixing, or
               over-engineering. Expect a mix of dev logs, side projects, and bad jokes embedded in
               technical posts.
             </p>
             <p>
-              Outside the terminal, I’m usually doing something that involves grappling, hiking
+              Outside the terminal, I'm usually doing something that involves grappling, hiking
               around the Pacific Northwest, assembling tiny robots, or making something weird with
-              my 3D printer. Life is a string of small experiments, and I like to run a lot of them.
+              my 3D printer.
             </p>
           </div>
         </div>
