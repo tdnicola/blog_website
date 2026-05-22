@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider TAILWIND_MODE=watch next-remote-watch ./data",
-    "dev": "cross-env TAILWIND_MODE=watch next dev",
-    "build": "next build && node ./scripts/generate-sitemap",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider TAILWIND_MODE=watch next dev",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider next build && node ./scripts/generate-sitemap",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "prepare": "husky install"
@@ -69,6 +69,6 @@
     ]
   },
   "engines": {
-    "node": "18.x"
+    "node": "24.x"
   }
 }
