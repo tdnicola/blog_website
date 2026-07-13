@@ -1,16 +1,16 @@
+'use client'
+
 import { useEffect, useRef } from 'react'
-import { useTheme } from 'next-themes'
 
 export default function SpaceBackground() {
-  const { resolvedTheme } = useTheme()
-  const smRef = useRef(null)
-  const lgRef = useRef(null)
-  const rafRef = useRef(null)
+  const smRef = useRef<HTMLDivElement>(null)
+  const lgRef = useRef<HTMLDivElement>(null)
+  const rafRef = useRef<number | null>(null)
 
   useEffect(() => {
     if (window.matchMedia('(pointer: coarse)').matches) return
 
-    const onMove = (e) => {
+    const onMove = (e: MouseEvent) => {
       if (rafRef.current) return
       rafRef.current = requestAnimationFrame(() => {
         const x = e.clientX / window.innerWidth - 0.5
@@ -27,11 +27,9 @@ export default function SpaceBackground() {
     }
   }, [])
 
-  const isDark = resolvedTheme !== 'light'
-
   return (
     <>
-      {/* Fixed bg — behind everything */}
+      {/* Fixed bg - behind everything */}
       <div
         aria-hidden="true"
         style={{
@@ -39,13 +37,12 @@ export default function SpaceBackground() {
           inset: 0,
           zIndex: -1,
           background: 'var(--sp-bg)',
-          backgroundImage: isDark
-            ? 'radial-gradient(ellipse at 50% 0%, rgba(147,197,253,0.05) 0%, transparent 60%)'
-            : 'radial-gradient(ellipse at 50% 0%, rgba(147,197,253,0.08) 0%, transparent 55%)',
+          backgroundImage:
+            'radial-gradient(ellipse at 50% 0%, rgba(147,197,253,0.05) 0%, transparent 60%)',
         }}
       />
 
-      {/* Star field + shooting stars — clipped so parallax overflow stays hidden */}
+      {/* Star field + shooting stars - clipped so parallax overflow stays hidden */}
       <div
         aria-hidden="true"
         style={{
@@ -62,7 +59,7 @@ export default function SpaceBackground() {
         <div className="sp-shoot-b" />
       </div>
 
-      {/* Atmosphere — cold starlight from above */}
+      {/* Atmosphere - cold starlight from above */}
       <div
         aria-hidden="true"
         style={{

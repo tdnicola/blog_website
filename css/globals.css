@@ -2,23 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Space theme color tokens - light (blueprint) mode */
+/* Space theme color tokens - single dark (deep space) mode */
 :root {
-  --sp-bg: #f0f4ff;
-  --sp-surface: #e4ecff;
-  --sp-border: rgba(30, 58, 138, 0.15);
-  --sp-name: #0a1628;
-  --sp-body: #1e3a5f;
-  --sp-accent: #1d4ed8;
-  --sp-accent-dim: rgba(29, 78, 216, 0.7);
-  --sp-social: #3b5998;
-  --sp-divider-clr: rgba(29, 78, 216, 0.4);
-  --sp-glow: rgba(29, 78, 216, 0.2);
-  --sp-header-bg: rgba(240, 244, 255, 0.85);
-}
-
-/* Space theme color tokens - dark (deep space) mode */
-.dark {
   --sp-bg: #000008;
   --sp-surface: #080c18;
   --sp-border: rgba(147, 197, 253, 0.13);
@@ -29,11 +14,11 @@
   --sp-social: #5a7890;
   --sp-divider-clr: rgba(147, 197, 253, 0.28);
   --sp-glow: rgba(147, 197, 253, 0.35);
-  --sp-header-bg: rgba(0, 0, 8, 0.7);
 }
 
 html {
   background: var(--sp-bg);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -45,40 +30,6 @@ body {
   outline: 2px solid var(--sp-accent);
   outline-offset: 2px;
   border-radius: 2px;
-}
-
-/* Hover animated dual-image effect for profile photo */
-img.image-hover {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  object-fit: contain;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-.imageBorder {
-  position: relative;
-  margin: 0 auto;
-  border: 3px solid var(--sp-accent);
-  border-radius: 50%;
-}
-
-.imageBorder img.image-hover {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  object-fit: contain;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-.imageBorder:hover img.image-hover {
-  opacity: 1;
 }
 
 /* Star field animations */
@@ -170,7 +121,7 @@ img.image-hover {
   opacity: 0;
 }
 
-/* HAL 9000 decorative elements — homepage only */
+/* HAL 9000 decorative elements - homepage only */
 .sp-odyssey-hal {
   position: fixed;
   top: 68px;
@@ -257,18 +208,125 @@ img.image-hover {
   }
 }
 
-.remark-code-title {
-  @apply px-5 py-3 font-mono text-sm font-bold text-gray-200 bg-gray-700 rounded-t;
+.home-post-link:hover {
+  color: var(--sp-name) !important;
+}
+.home-social-link:hover {
+  color: var(--sp-accent) !important;
 }
 
-.remark-code-title + pre {
-  @apply mt-0 rounded-t-none;
+/* Prism token colors (rehype-prism-plus) */
+.prose pre .token.tag,
+.prose pre .token.deleted,
+.prose pre .token.boolean {
+  color: #ff8383;
+}
+.prose pre .token.attr-name {
+  color: #ffe484;
+}
+.prose pre .token.attr-value,
+.prose pre .token.string,
+.prose pre .token.inserted {
+  color: #b5f4a5;
+}
+.prose pre .token.punctuation {
+  color: #dde8f5;
+}
+.prose pre .token.keyword {
+  color: #d9a9ff;
+}
+.prose pre .token.function {
+  color: #93ddfd;
+}
+.prose pre .token.comment {
+  color: #5a7890;
+  font-style: italic;
+}
+.prose pre code .token-line {
+  display: inline-block;
+  width: 100%;
+}
+.prose pre .highlight-line {
+  background: rgba(147, 197, 253, 0.08);
+  display: inline-block;
+  width: 100%;
+}
+.prose pre .line-number::before {
+  color: var(--sp-social);
 }
 
-.task-list-item:before {
-  @apply hidden;
+/* Prose overrides for blog post body */
+.prose {
+  color: var(--sp-body);
+  font-size: 1.2em;
+  line-height: 1.75;
 }
-
-html {
-  scroll-behavior: smooth;
+.prose a {
+  color: var(--sp-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose a:hover {
+  color: var(--sp-name);
+}
+.prose h1,
+.prose h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  color: var(--sp-name);
+}
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: var(--sp-name);
+}
+.prose strong {
+  color: var(--sp-name);
+}
+.prose code {
+  color: var(--sp-accent);
+  background-color: rgba(147, 197, 253, 0.08);
+  font-family: 'Space Mono', monospace;
+  padding: 2px 4px;
+  border-radius: 0.25rem;
+}
+.prose code::before,
+.prose code::after {
+  content: none;
+}
+.prose pre {
+  background-color: var(--sp-surface);
+  border: 1px solid var(--sp-border);
+}
+.prose hr {
+  border-color: var(--sp-border);
+}
+.prose blockquote {
+  color: var(--sp-body);
+  border-left-color: var(--sp-accent-dim);
+}
+.prose thead {
+  color: var(--sp-name);
+}
+.prose tbody tr {
+  border-bottom-color: var(--sp-border);
+}
+.prose .anchor {
+  color: var(--sp-accent-dim);
+  text-decoration: none;
+  margin-left: 0.3em;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.prose .anchor:before {
+  content: '#';
+}
+.prose h1:hover .anchor,
+.prose h2:hover .anchor,
+.prose h3:hover .anchor,
+.prose h1 .anchor:focus,
+.prose h2 .anchor:focus,
+.prose h3 .anchor:focus {
+  opacity: 1;
 }

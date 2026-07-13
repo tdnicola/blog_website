@@ -1,3 +1,4 @@
+// Fixed star positions - module-level so server and client produce identical CSS
 const STARS_SM_VALUES = [
   '45px 78px 0 0 rgba(255,255,255,0.7)',
   '156px 23px 0 0 rgba(255,255,255,0.45)',
@@ -99,34 +100,21 @@ const STARS_LG_VALUES = [
 export const STARS_SM = STARS_SM_VALUES.join(', ')
 export const STARS_LG = STARS_LG_VALUES.join(', ')
 
-export const STARS_SM_LIGHT = STARS_SM.replace(
-  /rgba\(255,255,255,([\d.]+)\)/g,
-  (_, a) => `rgba(10,22,80,${(parseFloat(a) * 0.25).toFixed(2)})`
-)
-
-export const STARS_LG_LIGHT = STARS_LG.replace(
-  /rgba\(255,255,255,([\d.]+)\)/g,
-  (_, a) => `rgba(10,22,80,${(parseFloat(a) * 0.2).toFixed(2)})`
-)
-
-// CSS with class-based dark/light switching - no JS theme detection needed at inject time
 export const STAR_CSS = `
   .sp-stars-sm { will-change: transform; transition: transform 0.18s ease-out; }
   .sp-stars-sm::before {
     content: ''; position: fixed; top: 0; left: 0;
     width: 1px; height: 1px; border-radius: 50%;
-    box-shadow: ${STARS_SM_LIGHT}; pointer-events: none;
+    box-shadow: ${STARS_SM}; pointer-events: none;
   }
-  .dark .sp-stars-sm::before { box-shadow: ${STARS_SM}; }
 
   .sp-stars-lg { will-change: transform; transition: transform 0.12s ease-out; }
   .sp-stars-lg::after {
     content: ''; position: fixed; top: 0; left: 0;
     width: 2px; height: 2px; border-radius: 50%;
-    box-shadow: ${STARS_LG_LIGHT};
+    box-shadow: ${STARS_LG};
     animation: sp-twinkle 5s ease-in-out infinite; pointer-events: none;
   }
-  .dark .sp-stars-lg::after { box-shadow: ${STARS_LG}; }
 
   @media (prefers-reduced-motion: reduce) {
     .sp-stars-sm, .sp-stars-lg { transition: none; }

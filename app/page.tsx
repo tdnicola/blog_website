@@ -1,26 +1,14 @@
-import siteMetadata from '@/data/siteMetadata'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
-import { PageSeo } from '@/components/SEO'
+import Link from 'next/link'
+import SmartLink from '@/components/SmartLink'
+import { getAllPosts } from '@/lib/posts'
+import siteMetadata from '@/data/siteMetadata.json'
 
-export async function getStaticProps() {
-  const allPosts = await getAllFilesFrontMatter('blog')
-  const posts = allPosts
-    .filter((p) => !p.draft)
-    .slice(0, 6)
-    .map(({ title, slug }) => ({ title, href: `/blog/${slug}` }))
-  return { props: { posts } }
-}
+export default function Home() {
+  const posts = getAllPosts()
 
-export default function Home({ posts }) {
   return (
     <>
-      <PageSeo
-        title={siteMetadata.title}
-        description={siteMetadata.description}
-        url={siteMetadata.siteUrl}
-      />
-
-      {/* HAL 9000 decorative elements — homepage only */}
+      {/* HAL 9000 decorative elements - homepage only */}
       <div aria-hidden="true" className="sp-odyssey-hal" />
       <div aria-hidden="true" className="sp-odyssey-monolith" />
       <div aria-hidden="true" className="sp-odyssey-telemetry">
@@ -33,29 +21,30 @@ export default function Home({ posts }) {
         style={{
           maxWidth: 560,
           margin: '0 auto',
-          padding: 'clamp(40px, 6vw, 60px) 0 80px',
+          padding: 'clamp(40px, 6vw, 60px) 20px 80px',
         }}
       >
         <h1
           style={{
-            fontFamily: '"Orbitron", sans-serif',
-            fontSize: 'clamp(18px, 2.5vw, 20px)',
+            fontFamily: 'var(--font-orbitron), sans-serif',
+            fontSize: 'clamp(24px, 3.5vw, 30px)',
             fontWeight: 700,
-            letterSpacing: '0.1em',
+            letterSpacing: '0.08em',
             color: 'var(--sp-name)',
-            textShadow: '0 0 24px var(--sp-glow)',
+            textShadow: '0 0 28px var(--sp-glow)',
             marginBottom: 28,
           }}
         >
           Tony Nicola
         </h1>
 
-        <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--sp-body)', marginBottom: 16 }}>
+        <p style={{ fontSize: 19, lineHeight: 1.75, color: 'var(--sp-body)', marginBottom: 18 }}>
           Data engineer at{' '}
           <a
             href="https://www.palomar.com"
             style={{
               color: 'var(--sp-accent)',
+              fontWeight: 600,
               textDecoration: 'underline',
               textUnderlineOffset: 3,
             }}
@@ -65,25 +54,26 @@ export default function Home({ posts }) {
           , where I build pipelines that move data cleanly from point A to point B - ideally without
           catching fire. I work with SQL, Python, Airflow, Snowflake, and DBT.
         </p>
-        <p style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--sp-body)', marginBottom: 44 }}>
+        <p style={{ fontSize: 19, lineHeight: 1.75, color: 'var(--sp-body)', marginBottom: 46 }}>
           Outside the terminal, I&apos;m usually doing{' '}
-          <a
+          <Link
             href="/blog/JiuJitsuBlackbelt"
             style={{
               color: 'var(--sp-accent)',
+              fontWeight: 600,
               textDecoration: 'underline',
               textUnderlineOffset: 3,
             }}
           >
             Brazilian Jiu-Jitsu
-          </a>
+          </Link>
           , hiking the Pacific Northwest, or making something weird with my 3D printer.
         </p>
 
         <p
           aria-hidden="true"
           style={{
-            fontFamily: '"Space Mono", monospace',
+            fontFamily: 'var(--font-space-mono), monospace',
             fontSize: 10,
             letterSpacing: '0.15em',
             color: 'var(--sp-divider-clr)',
@@ -91,12 +81,12 @@ export default function Home({ posts }) {
             userSelect: 'none',
           }}
         >
-          ---- TRANSMISSION LOG ◉ ----
+          ---- TRANSMISSION LOG &#9673; ----
         </p>
 
         <p
           style={{
-            fontFamily: '"Space Mono", monospace',
+            fontFamily: 'var(--font-space-mono), monospace',
             fontSize: 9,
             fontWeight: 700,
             letterSpacing: '0.22em',
@@ -104,16 +94,18 @@ export default function Home({ posts }) {
             marginBottom: 16,
           }}
         >
-          RECENT POSTS
+          WRITING
         </p>
 
         <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 52px 0' }}>
-          {posts.map(({ title, href }) => (
-            <li key={href} style={{ marginBottom: 11 }}>
-              <a
-                href={href}
+          {posts.map(({ title, slug }) => (
+            <li key={slug} style={{ marginBottom: 11 }}>
+              <Link
+                href={`/blog/${slug}`}
+                className="home-post-link"
                 style={{
-                  fontSize: 15,
+                  fontSize: 16.5,
+                  fontWeight: 500,
                   color: 'var(--sp-accent)',
                   textDecoration: 'none',
                   display: 'inline-flex',
@@ -121,12 +113,10 @@ export default function Home({ posts }) {
                   gap: 9,
                   minHeight: 44,
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--sp-name)')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--sp-accent)')}
               >
-                <span style={{ opacity: 0.5, fontSize: 12 }}>○</span>
+                <span style={{ opacity: 0.5, fontSize: 12 }}>&#9675;</span>
                 {title}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -137,11 +127,12 @@ export default function Home({ posts }) {
             { label: 'github', href: siteMetadata.github },
             { label: 'linkedin', href: siteMetadata.linkedin },
           ].map(({ label, href }) => (
-            <a
+            <SmartLink
               key={label}
               href={href}
+              className="home-social-link"
               style={{
-                fontFamily: '"Space Mono", monospace',
+                fontFamily: 'var(--font-space-mono), monospace',
                 fontSize: 12,
                 letterSpacing: '0.1em',
                 color: 'var(--sp-social)',
@@ -151,11 +142,9 @@ export default function Home({ posts }) {
                 display: 'inline-flex',
                 alignItems: 'center',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--sp-accent)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--sp-social)')}
             >
               {label}
-            </a>
+            </SmartLink>
           ))}
         </div>
       </main>
