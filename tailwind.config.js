@@ -28,9 +28,21 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        space: ['"Space Mono"', 'monospace'],
+        orbital: ['"Orbitron"', 'sans-serif'],
       },
       colors: {
         blue: colors.lightBlue,
+        sp: {
+          bg: 'var(--sp-bg)',
+          surface: 'var(--sp-surface)',
+          border: 'var(--sp-border)',
+          name: 'var(--sp-name)',
+          body: 'var(--sp-body)',
+          accent: 'var(--sp-accent)',
+          'accent-dim': 'var(--sp-accent-dim)',
+          social: 'var(--sp-social)',
+        },
         code: {
           green: '#b5f4a5',
           yellow: '#ffe484',
@@ -40,114 +52,67 @@ module.exports = {
           white: '#fff',
         },
       },
-      typography: (theme) => ({
+      typography: () => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.700'),
+            color: '#1e3a5f',
             a: {
-              color: theme('colors.blue.500'),
-              '&:hover': {
-                color: theme('colors.blue.600'),
-              },
-              code: { color: theme('colors.blue.400') },
+              color: '#1d4ed8',
+              '&:hover': { color: '#1e40af' },
+              code: { color: '#1d4ed8' },
             },
-            h1: {
-              fontWeight: '700',
-              letterSpacing: theme('letterSpacing.tight'),
-              color: theme('colors.gray.900'),
-            },
-            h2: {
-              fontWeight: '700',
-              letterSpacing: theme('letterSpacing.tight'),
-              color: theme('colors.gray.900'),
-            },
-            h3: {
-              fontWeight: '600',
-              color: theme('colors.gray.900'),
-            },
-            'h4,h5,h6': {
-              color: theme('colors.gray.900'),
-            },
+            h1: { fontWeight: '700', color: '#0a1628', fontFamily: '"Orbitron", sans-serif' },
+            h2: { fontWeight: '700', color: '#0a1628', fontFamily: '"Orbitron", sans-serif' },
+            h3: { fontWeight: '600', color: '#0a1628' },
+            'h4,h5,h6': { color: '#0a1628' },
             code: {
-              color: theme('colors.pink.500'),
-              backgroundColor: theme('colors.gray.100'),
+              color: '#1d4ed8',
+              backgroundColor: 'rgba(29,78,216,0.08)',
+              fontFamily: '"Space Mono", monospace',
               paddingLeft: '4px',
               paddingRight: '4px',
               paddingTop: '2px',
               paddingBottom: '2px',
               borderRadius: '0.25rem',
             },
-            'code:before': {
-              content: 'none',
-            },
-            'code:after': {
-              content: 'none',
-            },
-            hr: { borderColor: theme('colors.gray.200') },
-            'ol li:before': {
-              fontWeight: '600',
-              color: theme('colors.gray.500'),
-            },
-            'ul li:before': {
-              backgroundColor: theme('colors.gray.500'),
-            },
-            strong: { color: theme('colors.gray.600') },
+            'code:before': { content: 'none' },
+            'code:after': { content: 'none' },
+            hr: { borderColor: 'rgba(30,58,138,0.15)' },
+            'ol li:before': { fontWeight: '600', color: '#3b5998' },
+            'ul li:before': { backgroundColor: '#3b5998' },
+            strong: { color: '#0a1628' },
             blockquote: {
-              color: theme('colors.gray.900'),
-              borderLeftColor: theme('colors.gray.200'),
+              color: '#1e3a5f',
+              borderLeftColor: 'rgba(29,78,216,0.4)',
             },
           },
         },
         dark: {
           css: {
-            color: theme('colors.gray.300'),
+            color: '#6a8090',
             a: {
-              color: theme('colors.blue.500'),
-              '&:hover': {
-                color: theme('colors.blue.400'),
-              },
-              code: { color: theme('colors.blue.400') },
+              color: '#93c5fd',
+              '&:hover': { color: '#bae6fd' },
+              code: { color: '#93c5fd' },
             },
-            h1: {
-              fontWeight: '700',
-              letterSpacing: theme('letterSpacing.tight'),
-              color: theme('colors.gray.100'),
-            },
-            h2: {
-              fontWeight: '700',
-              letterSpacing: theme('letterSpacing.tight'),
-              color: theme('colors.gray.100'),
-            },
-            h3: {
-              fontWeight: '600',
-              color: theme('colors.gray.100'),
-            },
-            'h4,h5,h6': {
-              color: theme('colors.gray.100'),
-            },
+            h1: { fontWeight: '700', color: '#dde8f5', fontFamily: '"Orbitron", sans-serif' },
+            h2: { fontWeight: '700', color: '#dde8f5', fontFamily: '"Orbitron", sans-serif' },
+            h3: { fontWeight: '600', color: '#dde8f5' },
+            'h4,h5,h6': { color: '#dde8f5' },
             code: {
-              backgroundColor: theme('colors.gray.800'),
+              color: '#93c5fd',
+              backgroundColor: 'rgba(147,197,253,0.08)',
+              fontFamily: '"Space Mono", monospace',
             },
-            hr: { borderColor: theme('colors.gray.700') },
-            'ol li:before': {
-              fontWeight: '600',
-              color: theme('colors.gray.400'),
-            },
-            'ul li:before': {
-              backgroundColor: theme('colors.gray.400'),
-            },
-            strong: { color: theme('colors.gray.100') },
-            thead: {
-              color: theme('colors.gray.100'),
-            },
-            tbody: {
-              tr: {
-                borderBottomColor: theme('colors.gray.700'),
-              },
-            },
+            hr: { borderColor: 'rgba(147,197,253,0.28)' },
+            'ol li:before': { fontWeight: '600', color: '#5a7890' },
+            'ul li:before': { backgroundColor: '#5a7890' },
+            strong: { color: '#dde8f5' },
+            thead: { color: '#dde8f5' },
+            tbody: { tr: { borderBottomColor: 'rgba(147,197,253,0.13)' } },
             blockquote: {
-              color: theme('colors.gray.100'),
-              borderLeftColor: theme('colors.gray.700'),
+              color: '#dde8f5',
+              borderLeftColor: 'rgba(147,197,253,0.65)',
             },
           },
         },

@@ -2,8 +2,16 @@ import Image from 'next/image'
 import Link from '@/components/Link'
 
 const Card = ({ title, description, imgSrc, href }) => (
-  <div className="p-4 md:w-1/2 md" style={{ maxWidth: '544px' }}>
-    <div className="h-full border-2 border-gray-200 border-opacity-60 dark:border-gray-700 rounded-md overflow-hidden">
+  <div className="p-4 md:w-1/2" style={{ maxWidth: '544px' }}>
+    <div
+      style={{
+        height: '100%',
+        border: '1px solid var(--sp-border)',
+        borderRadius: 6,
+        overflow: 'hidden',
+        background: 'var(--sp-surface)',
+      }}
+    >
       {href ? (
         <Link href={href} aria-label={`Link to ${title}`}>
           <Image
@@ -24,21 +32,42 @@ const Card = ({ title, description, imgSrc, href }) => (
         />
       )}
       <div className="p-6">
-        <h2 className="text-2xl font-bold leading-8 tracking-tight mb-3">
+        <h2
+          style={{
+            fontFamily: '"Orbitron", sans-serif',
+            fontSize: 16,
+            fontWeight: 700,
+            letterSpacing: '0.05em',
+            color: 'var(--sp-name)',
+            marginBottom: 12,
+          }}
+        >
           {href ? (
-            <Link href={href} aria-label={`Link to ${title}`}>
+            <Link
+              href={href}
+              aria-label={`Link to ${title}`}
+              style={{ color: 'inherit', textDecoration: 'none' }}
+            >
               {title}
             </Link>
           ) : (
             title
           )}
         </h2>
-        <p className="prose text-gray-500 max-w-none dark:text-gray-400 mb-3">{description}</p>
+        <p style={{ fontSize: 14, color: 'var(--sp-body)', marginBottom: 12, lineHeight: 1.6 }}>
+          {description}
+        </p>
         {href && (
           <Link
             href={href}
-            className="text-base font-medium leading-6 text-blue-500 hover:text-blue-600 dark:hover:text-blue-400"
             aria-label={`Link to ${title}`}
+            style={{
+              fontFamily: '"Space Mono", monospace',
+              fontSize: 11,
+              letterSpacing: '0.06em',
+              color: 'var(--sp-accent)',
+              textDecoration: 'none',
+            }}
           >
             Learn more &rarr;
           </Link>

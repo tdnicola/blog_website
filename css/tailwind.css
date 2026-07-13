@@ -2,8 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Space theme color tokens - light (blueprint) mode */
+:root {
+  --sp-bg: #f0f4ff;
+  --sp-surface: #e4ecff;
+  --sp-border: rgba(30, 58, 138, 0.15);
+  --sp-name: #0a1628;
+  --sp-body: #1e3a5f;
+  --sp-accent: #1d4ed8;
+  --sp-accent-dim: rgba(29, 78, 216, 0.7);
+  --sp-social: #3b5998;
+  --sp-divider-clr: rgba(29, 78, 216, 0.4);
+  --sp-glow: rgba(29, 78, 216, 0.2);
+  --sp-header-bg: rgba(240, 244, 255, 0.85);
+}
 
+/* Space theme color tokens - dark (deep space) mode */
+.dark {
+  --sp-bg: #000008;
+  --sp-surface: #080c18;
+  --sp-border: rgba(147, 197, 253, 0.13);
+  --sp-name: #dde8f5;
+  --sp-body: #6a8090;
+  --sp-accent: #93c5fd;
+  --sp-accent-dim: rgba(147, 197, 253, 0.65);
+  --sp-social: #5a7890;
+  --sp-divider-clr: rgba(147, 197, 253, 0.28);
+  --sp-glow: rgba(147, 197, 253, 0.35);
+  --sp-header-bg: rgba(0, 0, 8, 0.7);
+}
 
+html {
+  background: var(--sp-bg);
+}
+
+body {
+  color: var(--sp-body);
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--sp-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Hover animated dual-image effect for profile photo */
 img.image-hover {
   position: absolute;
   top: 0;
@@ -12,29 +56,207 @@ img.image-hover {
   bottom: 0;
   object-fit: contain;
   opacity: 0;
-  transition: opacity .2s;
+  transition: opacity 0.2s;
 }
+
 .imageBorder {
   position: relative;
   margin: 0 auto;
-  border: 3px solid white;
+  border: 3px solid var(--sp-accent);
   border-radius: 50%;
-  }
+}
 
-  .imageBorder img.image-hover {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    object-fit: contain;
-    opacity: 0;
-    transition: opacity .2s;
+.imageBorder img.image-hover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.2s;
 }
 
 .imageBorder:hover img.image-hover {
-    opacity: 1;
+  opacity: 1;
 }
+
+/* Star field animations */
+@keyframes sp-twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.2;
+  }
+}
+
+/* Shooting star animations */
+@keyframes sp-shoot-a {
+  0%,
+  94% {
+    opacity: 0;
+    transform: rotate(38deg) translateX(0px);
+  }
+  95% {
+    opacity: 1;
+    transform: rotate(38deg) translateX(0px);
+  }
+  98% {
+    opacity: 0;
+    transform: rotate(38deg) translateX(700px);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(38deg) translateX(0px);
+  }
+}
+
+@keyframes sp-shoot-b {
+  0%,
+  91% {
+    opacity: 0;
+    transform: rotate(32deg) translateX(0px);
+  }
+  92% {
+    opacity: 1;
+    transform: rotate(32deg) translateX(0px);
+  }
+  95% {
+    opacity: 0;
+    transform: rotate(32deg) translateX(550px);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(32deg) translateX(0px);
+  }
+}
+
+.sp-shoot-a {
+  position: absolute;
+  top: 14%;
+  left: 12%;
+  width: 130px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  transform-origin: left center;
+  animation: sp-shoot-a 22s ease-in infinite;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.sp-shoot-b {
+  position: absolute;
+  top: 38%;
+  right: 20%;
+  width: 90px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  transform-origin: left center;
+  animation: sp-shoot-b 31s ease-in infinite;
+  animation-delay: -14s;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* HAL 9000 decorative elements — homepage only */
+.sp-odyssey-hal {
+  position: fixed;
+  top: 68px;
+  right: 228px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(147, 197, 253, 0.13);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sp-odyssey-hal::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(147, 197, 253, 0.07);
+  border: 1px solid rgba(147, 197, 253, 0.2);
+  transform: translate(-50%, -50%);
+}
+
+.sp-odyssey-hal::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(147, 197, 253, 0.07);
+  transform: translate(-50%, -50%);
+}
+
+.sp-odyssey-monolith {
+  position: fixed;
+  top: 40px;
+  right: 200px;
+  width: 3px;
+  height: 130px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(147, 197, 253, 0.18) 30%,
+    rgba(147, 197, 253, 0.18) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sp-odyssey-monolith::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -8px;
+  right: -8px;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent, rgba(147, 197, 253, 0.04), transparent);
+}
+
+.sp-odyssey-telemetry {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: rgba(147, 197, 253, 0.22);
+  pointer-events: none;
+  z-index: 100;
+  line-height: 1.6;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .sp-shoot-a,
+  .sp-shoot-b {
+    animation: none;
+    opacity: 0;
+  }
+}
+
 .remark-code-title {
   @apply px-5 py-3 font-mono text-sm font-bold text-gray-200 bg-gray-700 rounded-t;
 }

@@ -1,7 +1,5 @@
-import Image from 'next/image'
 import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
-import Link from '@/components/Link'
 import Card from '@/components/Card'
 import { PageSeo } from '@/components/SEO'
 
@@ -13,27 +11,36 @@ export default function Projects() {
         description={siteMetadata.description}
         url={`${siteMetadata.siteUrl}/projects`}
       />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+      <div style={{ paddingTop: 48, paddingBottom: 80 }}>
+        <div
+          style={{
+            marginBottom: 32,
+            borderBottom: '1px solid var(--sp-border)',
+            paddingBottom: 24,
+          }}
+        >
+          <h1
+            style={{
+              fontFamily: '"Orbitron", sans-serif',
+              fontSize: 'clamp(24px, 4vw, 36px)',
+              fontWeight: 700,
+              letterSpacing: '0.05em',
+              color: 'var(--sp-name)',
+            }}
+          >
             Projects
           </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-    
-          </p>
         </div>
-        <div className="container py-12">
-          <div className="flex flex-wrap -m-4">
-            {projectsData.map((d) => (
-              <Card
-                key={d.title}
-                title={d.title}
-                description={d.description}
-                imgSrc={d.imgSrc}
-                href={d.href}
-              />
-            ))}
-          </div>
+        <div className="flex flex-wrap -m-4">
+          {projectsData.map((d) => (
+            <Card
+              key={d.title}
+              title={d.title}
+              description={d.description}
+              imgSrc={d.imgSrc}
+              href={d.href}
+            />
+          ))}
         </div>
       </div>
     </>

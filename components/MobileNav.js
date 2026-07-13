@@ -10,7 +10,6 @@ const MobileNav = () => {
       if (status) {
         document.body.style.overflow = 'auto'
       } else {
-        // Prevent scrolling
         document.body.style.overflow = 'hidden'
       }
       return !status
@@ -21,7 +20,18 @@ const MobileNav = () => {
     <div className="sm:hidden">
       <button
         type="button"
-        className="w-8 h-8 ml-1 mr-1 rounded"
+        style={{
+          width: 44,
+          height: 44,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          color: navShow ? 'var(--sp-accent)' : 'var(--sp-social)',
+          padding: 0,
+        }}
         aria-label="Toggle Menu"
         onClick={onToggleNav}
       >
@@ -29,7 +39,8 @@ const MobileNav = () => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
-          className="text-gray-900 dark:text-gray-100"
+          width={20}
+          height={20}
         >
           {navShow ? (
             <path
@@ -46,23 +57,50 @@ const MobileNav = () => {
           )}
         </svg>
       </button>
+
       <div
-        className={`fixed w-full h-full top-24 right-0 bg-gray-200 dark:bg-gray-800 opacity-95 z-10 transform ease-in-out duration-300 ${
-          navShow ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        style={{
+          position: 'fixed',
+          width: '100%',
+          height: '100%',
+          top: 0,
+          right: 0,
+          background: 'var(--sp-bg)',
+          opacity: 0.97,
+          zIndex: 200,
+          transform: navShow ? 'translateX(0)' : 'translateX(100%)',
+          transition: 'transform 0.3s ease-in-out',
+        }}
       >
         <button
           type="button"
-          aria-label="toggle modal"
-          className="fixed w-full h-full cursor-auto focus:outline-none"
+          aria-label="Close menu"
+          style={{
+            position: 'fixed',
+            width: '100%',
+            height: '100%',
+            cursor: 'auto',
+            background: 'none',
+            border: 'none',
+          }}
           onClick={onToggleNav}
-        ></button>
-        <nav className="fixed h-full mt-8">
+        />
+        <nav
+          style={{ position: 'fixed', height: '100%', marginTop: 80 }}
+          aria-label="Mobile navigation"
+        >
           {headerNavLinks.map((link) => (
-            <div key={link.title} className="px-12 py-4">
+            <div key={link.title} style={{ padding: '14px 48px' }}>
               <Link
                 href={link.href}
-                className="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
+                style={{
+                  fontFamily: '"Space Mono", monospace',
+                  fontSize: 20,
+                  letterSpacing: '0.1em',
+                  color: 'var(--sp-name)',
+                  textDecoration: 'none',
+                  display: 'block',
+                }}
                 onClick={onToggleNav}
               >
                 {link.title}

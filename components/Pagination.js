@@ -4,30 +4,52 @@ export default function Pagination({ totalPages, currentPage }) {
   const prevPage = parseInt(currentPage) - 1 > 0
   const nextPage = parseInt(currentPage) + 1 <= parseInt(totalPages)
 
+  const btnStyle = (active) => ({
+    fontFamily: '"Space Mono", monospace',
+    fontSize: 12,
+    letterSpacing: '0.06em',
+    color: active ? 'var(--sp-accent)' : 'var(--sp-body)',
+    background: 'none',
+    border: 'none',
+    cursor: active ? 'pointer' : 'default',
+    opacity: active ? 1 : 0.4,
+    padding: '8px 0',
+  })
+
   return (
-    <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-      <nav className="flex justify-between">
-        {!prevPage && (
-          <button rel="previous" className="cursor-auto disabled:opacity-50" disabled={!prevPage}>
-            Previous
+    <div style={{ paddingTop: 24, paddingBottom: 32 }}>
+      <nav
+        style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+        aria-label="Pagination"
+      >
+        {!prevPage ? (
+          <button style={btnStyle(false)} disabled>
+            &larr; Previous
           </button>
-        )}
-        {prevPage && (
+        ) : (
           <Link href={currentPage - 1 === 1 ? `/blog/` : `/blog/page/${currentPage - 1}`}>
-            <button rel="previous">Previous</button>
+            <button style={btnStyle(true)}>&larr; Previous</button>
           </Link>
         )}
-        <span>
-          {currentPage} of {totalPages}
+
+        <span
+          style={{
+            fontFamily: '"Space Mono", monospace',
+            fontSize: 11,
+            color: 'var(--sp-social)',
+            letterSpacing: '0.05em',
+          }}
+        >
+          {currentPage} / {totalPages}
         </span>
-        {!nextPage && (
-          <button rel="next" className="cursor-auto disabled:opacity-50" disabled={!nextPage}>
-            Next
+
+        {!nextPage ? (
+          <button style={btnStyle(false)} disabled>
+            Next &rarr;
           </button>
-        )}
-        {nextPage && (
+        ) : (
           <Link href={`/blog/page/${currentPage + 1}`}>
-            <button rel="next">Next</button>
+            <button style={btnStyle(true)}>Next &rarr;</button>
           </Link>
         )}
       </nav>

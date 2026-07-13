@@ -4,7 +4,24 @@ import kebabCase from '@/lib/utils/kebabCase'
 const Tag = ({ text }) => {
   return (
     <Link href={`/tags/${kebabCase(text)}`}>
-      <a className="mr-3 text-sm font-medium text-blue-500 uppercase hover:text-blue-600 dark:hover:text-blue-400">
+      <a
+        style={{
+          fontFamily: '"Space Mono", monospace',
+          fontSize: 10,
+          letterSpacing: '0.1em',
+          color: 'var(--sp-accent)',
+          border: '1px solid var(--sp-border)',
+          borderRadius: 3,
+          padding: '2px 8px',
+          textDecoration: 'none',
+          textTransform: 'uppercase',
+          display: 'inline-block',
+          marginRight: 8,
+          marginBottom: 4,
+        }}
+        onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'var(--sp-accent)')}
+        onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--sp-border)')}
+      >
         {text.split(' ').join('-')}
       </a>
     </Link>

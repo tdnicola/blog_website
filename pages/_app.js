@@ -8,6 +8,7 @@ import Head from 'next/head'
 import { SEO } from '@/components/SEO'
 import LayoutWrapper from '@/components/LayoutWrapper'
 import { Analytics } from '@vercel/analytics/react'
+import { STAR_CSS } from '@/lib/stars'
 
 import mailgo from 'mailgo'
 
@@ -22,14 +23,19 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <ThemeProvider attribute="class">
+      <ThemeProvider attribute="class" defaultTheme="dark">
         <Head>
           <meta content="width=device-width, initial-scale=1" name="viewport" />
+          <style dangerouslySetInnerHTML={{ __html: STAR_CSS }} />
         </Head>
         <DefaultSeo {...SEO} />
-        <LayoutWrapper>
+        {Component.noLayout ? (
           <Component {...pageProps} />
-        </LayoutWrapper>
+        ) : (
+          <LayoutWrapper>
+            <Component {...pageProps} />
+          </LayoutWrapper>
+        )}
       </ThemeProvider>
       <Analytics />
     </>
