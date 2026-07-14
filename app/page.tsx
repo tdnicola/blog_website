@@ -46,7 +46,7 @@ export default function Home() {
         <p style={{ fontSize: 19, lineHeight: 1.75, color: 'var(--sp-body)', marginBottom: 18 }}>
           Data engineer at{' '}
           <a
-            href="https://www.palomar.com"
+            href="https://plmr.com/"
             style={{
               color: 'var(--sp-accent)',
               fontWeight: 600,
