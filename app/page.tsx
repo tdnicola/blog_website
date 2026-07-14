@@ -3,8 +3,13 @@ import SmartLink from '@/components/SmartLink'
 import { getAllPosts } from '@/lib/posts'
 import siteMetadata from '@/data/siteMetadata.json'
 
+const FEATURED_SLUGS = ['JiuJitsuBlackbelt', 'discordData', 'CareerFoundry']
+
 export default function Home() {
   const posts = getAllPosts()
+  const featuredPosts = FEATURED_SLUGS.map((slug) =>
+    posts.find((post) => post.slug === slug)
+  ).filter((post): post is (typeof posts)[number] => post !== undefined)
 
   return (
     <>
@@ -97,8 +102,8 @@ export default function Home() {
           WRITING
         </p>
 
-        <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 52px 0' }}>
-          {posts.map(({ title, slug }) => (
+        <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px 0' }}>
+          {featuredPosts.map(({ title, slug }) => (
             <li key={slug} style={{ marginBottom: 11 }}>
               <Link
                 href={`/blog/${slug}`}
@@ -120,6 +125,21 @@ export default function Home() {
             </li>
           ))}
         </ul>
+
+        <Link
+          href="/writing"
+          style={{
+            fontFamily: 'var(--font-space-mono), monospace',
+            fontSize: 12,
+            letterSpacing: '0.05em',
+            color: 'var(--sp-social)',
+            textDecoration: 'none',
+            display: 'inline-block',
+            marginBottom: 52,
+          }}
+        >
+          more writing &rarr;
+        </Link>
 
         <div style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
           {[

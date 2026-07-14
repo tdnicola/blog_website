@@ -13,6 +13,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: siteMetadata.siteUrl,
       lastModified: new Date(),
     },
+    {
+      url: `${siteMetadata.siteUrl}/writing`,
+      lastModified: new Date(),
+    },
     ...posts,
   ]
 }
