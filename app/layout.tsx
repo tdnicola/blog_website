@@ -1,23 +1,14 @@
 import type { Metadata } from 'next'
-import { Orbitron, Space_Mono } from 'next/font/google'
+import { IBM_Plex_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import SpaceBackground from '@/components/SpaceBackground'
-import { STAR_CSS } from '@/lib/stars'
 import siteMetadata from '@/data/siteMetadata.json'
 import '@/css/globals.css'
 
-const orbitron = Orbitron({
+const plexMono = IBM_Plex_Mono({
   subsets: ['latin'],
-  weight: '700',
-  variable: '--font-orbitron',
-  display: 'swap',
-})
-
-const spaceMono = Space_Mono({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-space-mono',
+  weight: ['400', '500', '600'],
+  variable: '--font-mono',
   display: 'swap',
 })
 
@@ -51,13 +42,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={siteMetadata.language} className={`${orbitron.variable} ${spaceMono.variable}`}>
-      <head>
-        <style dangerouslySetInnerHTML={{ __html: STAR_CSS }} />
-      </head>
-      <body className="font-sans" style={{ minHeight: '100vh' }}>
-        <SpaceBackground />
-        <div style={{ position: 'relative', zIndex: 3 }}>{children}</div>
+    <html lang={siteMetadata.language} className={plexMono.variable}>
+      <body style={{ minHeight: '100vh' }}>
+        {children}
         <Analytics />
         <SpeedInsights />
       </body>

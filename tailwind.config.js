@@ -1,36 +1,27 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-
 module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       fontFamily: {
-        sans: [
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"Segoe UI"',
-          'Roboto',
-          ...defaultTheme.fontFamily.sans,
-        ],
-        space: ['"Space Mono"', 'monospace'],
-        orbital: ['"Orbitron"', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', 'monospace'],
       },
       colors: {
         sp: {
-          bg: 'var(--sp-bg)',
-          surface: 'var(--sp-surface)',
-          border: 'var(--sp-border)',
-          name: 'var(--sp-name)',
-          body: 'var(--sp-body)',
-          accent: 'var(--sp-accent)',
-          'accent-dim': 'var(--sp-accent-dim)',
-          social: 'var(--sp-social)',
+          bg: 'var(--bg)',
+          surface: 'var(--surface)',
+          border: 'var(--border)',
+          ink: 'var(--ink)',
+          body: 'var(--body)',
+          muted: 'var(--muted)',
+          'orange-text': 'var(--orange-text)',
+          'orange-graphic': 'var(--orange-graphic)',
+          divider: 'var(--divider)',
         },
       },
       typography: () => ({
         DEFAULT: {
           css: {
-            color: 'var(--sp-body)',
+            color: 'var(--body)',
             maxWidth: 'none',
           },
         },
