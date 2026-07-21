@@ -6,8 +6,6 @@ draft: false
 summary: 'The ever changing, always evolving note system.'
 ---
 
-# Taking and developing notes.
-
 > I wouldn't call it an obsession..
 
 ## The paper problem
@@ -45,5 +43,3 @@ This allows me to categorize and develop the note/idea a bit further. It makes m
 ## What's next
 
 Recently I started using Notion for personal/work and that is another whole system...
-
-WIP

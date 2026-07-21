@@ -31,6 +31,12 @@ export async function GET() {
       velocity: Math.sqrt(velocity.x ** 2 + velocity.y ** 2 + velocity.z ** 2) * 3600,
     }
 
+    // A corrupted TLE can make SGP4 return NaN/Infinity without throwing -
+    // treat that the same as a failed fetch rather than serving broken data.
+    if (!Object.values(result).every(Number.isFinite)) {
+      throw new Error('non-finite position computed')
+    }
+
     return Response.json(result)
   } catch {
     return Response.json({ error: 'fetch failed' }, { status: 502 })

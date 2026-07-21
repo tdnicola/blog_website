@@ -7,7 +7,7 @@ import '@/css/globals.css'
 
 const plexMono = IBM_Plex_Mono({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: ['500', '600'],
   variable: '--font-mono',
   display: 'swap',
 })
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description: siteMetadata.description,
     url: siteMetadata.siteUrl,
     siteName: siteMetadata.author,
-    images: [siteMetadata.openImage],
+    images: [{ url: siteMetadata.openImage, width: 1200, height: 630 }],
     locale: siteMetadata.locale,
     type: 'website',
   },

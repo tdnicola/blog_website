@@ -7,30 +7,26 @@ draft: false
 summary: 'Python to scrape library lists'
 ---
 
-# Python/node library list scraping during covid
-
 Check it out at: [Library Lists](https://tdnicola.github.io/libraryList/)
 
 > Python script to scrape private lists. Collect the information and post to a public site.
 
-Problem ❓:  
+Problem ❓:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Librarian wanted a way to post her library lists from [pueblolibrary.org](https://www.pueblolibrary.org) that were private to a public site for all to see during the covid shutdown.
 
-
-Solution ✔️:  
+Solution ✔️:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Python script to scrape data. Push that data to a database. Display that data publicly.
 
-
 ![Library Lists website](/static/images/librarylist.png)
 
-During Covid a friend wanted to have a way to keep some of the library patrons active and interested in books. She created many different types of library book lists but they were all private. 
+During Covid a friend wanted to have a way to keep some of the library patrons active and interested in books. She created many different types of library book lists but they were all private.
 
 This site displays all the different lists that she created.
 
 This was a fun python script to write. It needs to be refactored and set to run through a command line arg but this was a great beginner project that had a great outcome.
 
-
-> ## [code:](https://github.com/tdnicola/libraryList)  
-> ## [site:](https://tdnicola.github.io/libraryList/)  
+> ## [code:](https://github.com/tdnicola/libraryList)
+>
+> ## [site:](https://tdnicola.github.io/libraryList/)
