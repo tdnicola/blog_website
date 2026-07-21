@@ -13,6 +13,9 @@ export default function BackLink({ href, children }: { href: string; children: R
         textDecoration: 'underline',
         textUnderlineOffset: 3,
         textTransform: 'uppercase',
+        display: 'inline-flex',
+        alignItems: 'center',
+        minHeight: 44,
       }}
     >
       {children}

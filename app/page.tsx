@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import SmartLink from '@/components/SmartLink'
 import StatusLine from '@/components/StatusLine'
@@ -10,6 +11,26 @@ const linkStyle = {
   textUnderlineOffset: 3,
 }
 
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+}
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: siteMetadata.author,
+  url: siteMetadata.siteUrl,
+  jobTitle: siteMetadata.title,
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Palomar',
+    url: 'https://plmr.com/',
+  },
+  sameAs: [siteMetadata.github, siteMetadata.linkedin],
+}
+
 export default function Home() {
   return (
     <main
@@ -19,6 +40,11 @@ export default function Home() {
         padding: 'clamp(40px, 6vw, 60px) 20px 80px',
       }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+
       <StatusLine />
 
       <div
@@ -73,9 +99,13 @@ export default function Home() {
           <SmartLink href={`mailto:${siteMetadata.email}`} style={linkStyle}>
             reach me
           </SmartLink>{' '}
-          by email, or find my code on{' '}
+          by email, find my code on{' '}
           <SmartLink href={siteMetadata.github} style={linkStyle}>
             github
+          </SmartLink>
+          , or connect on{' '}
+          <SmartLink href={siteMetadata.linkedin} style={linkStyle}>
+            linkedin
           </SmartLink>
           .
         </p>

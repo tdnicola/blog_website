@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { MDXRemote } from 'next-mdx-remote/rsc'
@@ -40,29 +41,42 @@ export async function generateMetadata({
       url: `/blog/${slug}`,
       type: 'article',
       publishedTime: frontMatter.date,
-      images: [siteMetadata.openImage],
+      images: [{ url: siteMetadata.openImage, width: 1200, height: 630 }],
     },
   }
 }
 
+const imageStyle = {
+  display: 'block',
+  maxWidth: '100%',
+  height: 'auto',
+  borderRadius: 6,
+  margin: '24px 0',
+} as const
+
 function PostImage({ src, alt }: { src?: string; alt?: string }) {
   if (!src) return null
   const dimensions = getImageDimensions(src)
+
+  // Local /public images have known dimensions and get Next's automatic
+  // optimization/lazy-loading. Remote images (a few older posts embed
+  // external URLs) fall back to a plain <img> rather than allowlisting
+  // arbitrary external hosts in next.config.js for one-off legacy content.
+  if (dimensions) {
+    return (
+      <Image
+        src={src}
+        alt={alt || ''}
+        width={dimensions.width}
+        height={dimensions.height}
+        style={imageStyle}
+      />
+    )
+  }
+
   return (
     // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={src}
-      alt={alt || ''}
-      width={dimensions?.width}
-      height={dimensions?.height}
-      style={{
-        display: 'block',
-        maxWidth: '100%',
-        height: 'auto',
-        borderRadius: 6,
-        margin: '24px 0',
-      }}
-    />
+    <img src={src} alt={alt || ''} style={imageStyle} />
   )
 }
 
@@ -78,6 +92,19 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const { frontMatter, content } = post
   const { prev, next } = getAdjacentPosts(slug)
 
+  const blogPostingJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: frontMatter.title,
+    description: frontMatter.summary,
+    datePublished: frontMatter.date,
+    url: `${siteMetadata.siteUrl}/blog/${slug}`,
+    author: {
+      '@type': 'Person',
+      name: siteMetadata.author,
+    },
+  }
+
   return (
     <main
       style={{
@@ -86,6 +113,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         padding: 'clamp(40px, 6vw, 60px) 20px 80px',
       }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingJsonLd) }}
+      />
+
       <BackLink href="/">&larr; Tony Nicola</BackLink>
 
       <div
@@ -162,6 +194,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                   color: 'var(--orange-text)',
                   textDecoration: 'underline',
                   textUnderlineOffset: 3,
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  minHeight: 44,
                 }}
               >
                 &larr; {prev.title}
@@ -176,6 +211,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                   color: 'var(--orange-text)',
                   textDecoration: 'underline',
                   textUnderlineOffset: 3,
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'flex-end',
+                  minHeight: 44,
                 }}
               >
                 {next.title} &rarr;

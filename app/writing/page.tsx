@@ -46,18 +46,19 @@ export default function Writing() {
 
       {Array.from(postsByYear.entries()).map(([year, yearPosts]) => (
         <div key={year} style={{ marginBottom: 28 }}>
-          <p
+          <h2
             style={{
               fontFamily: 'var(--font-mono), monospace',
               fontSize: 12,
+              fontWeight: 500,
               color: 'var(--muted)',
               letterSpacing: '0.05em',
               textTransform: 'uppercase',
-              marginBottom: 10,
+              margin: '0 0 10px',
             }}
           >
             {year}
-          </p>
+          </h2>
           <ul
             style={{
               listStyle: 'none',
@@ -66,11 +67,12 @@ export default function Writing() {
               borderTop: '1px dashed var(--divider)',
             }}
           >
-            {yearPosts.map(({ title, slug }) => (
+            {yearPosts.map(({ title, slug, tags }) => (
               <li
                 key={slug}
                 style={{
                   borderBottom: '1px dashed var(--divider)',
+                  padding: '6px 0',
                 }}
               >
                 <Link
@@ -89,6 +91,20 @@ export default function Writing() {
                 >
                   {title}
                 </Link>
+                {tags && tags.length > 0 && (
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-mono), monospace',
+                      fontSize: 11,
+                      color: 'var(--muted)',
+                      letterSpacing: '0.05em',
+                      textTransform: 'uppercase',
+                      margin: 0,
+                    }}
+                  >
+                    {tags.join(' · ')}
+                  </p>
+                )}
               </li>
             ))}
           </ul>

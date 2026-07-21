@@ -7,8 +7,6 @@ draft: false
 summary: 'Discord bot that takes various commands to interact with APIS'
 ---
 
-# Discord bot that insults/praises + more to your friends.
-
 ![Robots are taking over](https://upload.wikimedia.org/wikipedia/commons/c/cd/HAL9000_I%27m_Sorry_Dave_Motivational_Poster.jpg)
 
 ## Throw a random insult/praise or just spice it up with a random/searched gif.
@@ -31,7 +29,7 @@ It's saying something if the computer lab was my favorite way to learn math.. It
 
 When someone is a good teacher you want to learn anything from them. I wish I could remember his name but my college algebra teacher was amazing. He talked about zombies, used pirates as examples, talked about movies. ALL in examples with math. This dude was a godsend in the math teaching world for me. I passed, and not only passed I enjoyed it. I remember writing a letter to him explaining how much of a good teacher he was to me. All because he made it fun. I try to keep that philosophy when learning new things, keep it fun and you will want to keep going at it. No one want's to suck at learning something.
 
-##### Some highlights and things I've learned from this bot:
+## Some highlights and things I've learned from this bot:
 
 1. 5 different API's (insult, praise, gif, cowspeak, 8ball). Honestly if you know 1 API you know how to do it...
 2. PostgreSQL queries to update and get statistics of bot usage.
@@ -89,9 +87,9 @@ API links:
 4. comment out stat api calls if no need for tracking stats
 5. node bot.js
 
-#### Final Heroku Postgres Stats 12/5/22: -RIP
+## Final Heroku Postgres Stats 12/5/22: -RIP
 
-###### Currently on 47 servers
+### Currently on 47 servers
 
 | Command                     | Counts |
 | --------------------------- | ------ |

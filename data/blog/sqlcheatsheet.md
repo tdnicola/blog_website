@@ -3,7 +3,7 @@ title: SQLCheatSheet
 date: '2023-06-03'
 tags: ['SQL']
 draft: false
-summary:
+summary: 'A running collection of SQL snippets - temp tables, loops, batched deletes, error handling, and job/directory inspection queries.'
 images: []
 ---
 
