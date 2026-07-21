@@ -4,4 +4,13 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: '/uses',
+        destination: '/blog/uses',
+        permanent: false,
+      },
+    ]
+  },
 })

@@ -10,6 +10,7 @@ import remarkMath from 'remark-math'
 import { getAdjacentPosts, getAllPostSlugs, getPostBySlug } from '@/lib/posts'
 import { getImageDimensions } from '@/lib/images'
 import SmartLink from '@/components/SmartLink'
+import BackLink from '@/components/BackLink'
 import siteMetadata from '@/data/siteMetadata.json'
 import 'katex/dist/katex.min.css'
 
@@ -85,39 +86,16 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         padding: 'clamp(40px, 6vw, 60px) 20px 80px',
       }}
     >
-      <Link
-        href="/"
-        style={{
-          fontFamily: 'var(--font-space-mono), monospace',
-          fontSize: 11,
-          letterSpacing: '0.1em',
-          color: 'var(--sp-social)',
-          textDecoration: 'none',
-        }}
-      >
-        &larr; back
-      </Link>
-
-      <h1
-        style={{
-          fontFamily: 'var(--font-orbitron), sans-serif',
-          fontSize: 'clamp(26px, 4.5vw, 38px)',
-          fontWeight: 700,
-          color: 'var(--sp-name)',
-          textShadow: '0 0 28px var(--sp-glow)',
-          margin: '20px 0 8px',
-        }}
-      >
-        {frontMatter.title}
-      </h1>
+      <BackLink href="/">&larr; Tony Nicola</BackLink>
 
       <div
         style={{
-          fontFamily: 'var(--font-space-mono), monospace',
+          fontFamily: 'var(--font-mono), monospace',
           fontSize: 11,
-          color: 'var(--sp-social)',
+          color: 'var(--muted)',
           letterSpacing: '0.05em',
-          marginBottom: 40,
+          textTransform: 'uppercase',
+          margin: '20px 0 8px',
         }}
       >
         {new Date(frontMatter.date).toLocaleDateString('en-US', {
@@ -128,6 +106,19 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         {' · '}
         {frontMatter.readingTime.text}
       </div>
+
+      <h1
+        style={{
+          fontFamily: 'var(--font-mono), monospace',
+          fontSize: 'clamp(26px, 4.5vw, 38px)',
+          fontWeight: 600,
+          color: 'var(--ink)',
+          textTransform: 'uppercase',
+          margin: '0 0 40px',
+        }}
+      >
+        {frontMatter.title}
+      </h1>
 
       <article className="prose">
         <MDXRemote
@@ -158,8 +149,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             gap: 20,
             marginTop: 56,
             paddingTop: 24,
-            borderTop: '1px solid var(--sp-divider-clr)',
-            fontFamily: 'var(--font-space-mono), monospace',
+            borderTop: '1px dashed var(--divider)',
+            fontFamily: 'var(--font-mono), monospace',
             fontSize: 12,
           }}
         >
@@ -167,7 +158,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             {prev && (
               <Link
                 href={`/blog/${prev.slug}`}
-                style={{ color: 'var(--sp-accent)', textDecoration: 'none' }}
+                style={{
+                  color: 'var(--orange-text)',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: 3,
+                }}
               >
                 &larr; {prev.title}
               </Link>
@@ -177,7 +172,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             {next && (
               <Link
                 href={`/blog/${next.slug}`}
-                style={{ color: 'var(--sp-accent)', textDecoration: 'none' }}
+                style={{
+                  color: 'var(--orange-text)',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: 3,
+                }}
               >
                 {next.title} &rarr;
               </Link>
@@ -185,6 +184,16 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           </div>
         </nav>
       )}
+
+      <div
+        style={{
+          marginTop: 40,
+          paddingTop: 24,
+          borderTop: '1px dashed var(--divider)',
+        }}
+      >
+        <BackLink href="/writing">&larr; All writing</BackLink>
+      </div>
     </main>
   )
 }

@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import BackLink from '@/components/BackLink'
 
 export default function NotFound() {
   return (
@@ -12,30 +12,19 @@ export default function NotFound() {
     >
       <h1
         style={{
-          fontFamily: 'var(--font-orbitron), sans-serif',
+          fontFamily: 'var(--font-mono), monospace',
           fontSize: 28,
-          fontWeight: 700,
-          color: 'var(--sp-name)',
+          fontWeight: 600,
+          color: 'var(--ink)',
           marginBottom: 16,
         }}
       >
         404
       </h1>
-      <p style={{ fontSize: 15, color: 'var(--sp-body)', marginBottom: 32 }}>
-        Lost in transmission. This page doesn&apos;t exist.
+      <p style={{ fontSize: 15, color: 'var(--body)', marginBottom: 32 }}>
+        This page doesn&apos;t exist.
       </p>
-      <Link
-        href="/"
-        style={{
-          fontFamily: 'var(--font-space-mono), monospace',
-          fontSize: 12,
-          letterSpacing: '0.1em',
-          color: 'var(--sp-accent)',
-          textDecoration: 'none',
-        }}
-      >
-        &larr; back home
-      </Link>
+      <BackLink href="/">&larr; Back home</BackLink>
     </main>
   )
 }
