@@ -67,7 +67,7 @@ export default function Home() {
           , hiking the Pacific Northwest, or making something weird with my 3D printer. I
           occasionally{' '}
           <Link href="/writing" style={linkStyle}>
-            write
+            ramble in words
           </Link>
           . You can{' '}
           <SmartLink href={`mailto:${siteMetadata.email}`} style={linkStyle}>
