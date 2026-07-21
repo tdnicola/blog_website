@@ -38,7 +38,7 @@ export default function StatusLine() {
         margin: 0,
       }}
     >
-      {time ? `PT ${time}` : 'PT --:--:--'} — STATUS: ONLINE
+      {time ? `PT ${time}` : 'PT --:--:--'} - STATUS: ONLINE
     </p>
   )
 }

@@ -10,6 +10,7 @@ import remarkMath from 'remark-math'
 import { getAdjacentPosts, getAllPostSlugs, getPostBySlug } from '@/lib/posts'
 import { getImageDimensions } from '@/lib/images'
 import SmartLink from '@/components/SmartLink'
+import BackLink from '@/components/BackLink'
 import siteMetadata from '@/data/siteMetadata.json'
 import 'katex/dist/katex.min.css'
 
@@ -85,20 +86,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         padding: 'clamp(40px, 6vw, 60px) 20px 80px',
       }}
     >
-      <Link
-        href="/"
-        style={{
-          fontFamily: 'var(--font-mono), monospace',
-          fontSize: 11,
-          letterSpacing: '0.1em',
-          color: 'var(--orange-text)',
-          textDecoration: 'underline',
-          textUnderlineOffset: 3,
-          textTransform: 'uppercase',
-        }}
-      >
-        &larr; Tony Nicola
-      </Link>
+      <BackLink href="/">&larr; Tony Nicola</BackLink>
 
       <div
         style={{
@@ -204,20 +192,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           borderTop: '1px dashed var(--divider)',
         }}
       >
-        <Link
-          href="/writing"
-          style={{
-            fontFamily: 'var(--font-mono), monospace',
-            fontSize: 11,
-            letterSpacing: '0.1em',
-            color: 'var(--orange-text)',
-            textDecoration: 'underline',
-            textUnderlineOffset: 3,
-            textTransform: 'uppercase',
-          }}
-        >
-          &larr; All writing
-        </Link>
+        <BackLink href="/writing">&larr; All writing</BackLink>
       </div>
     </main>
   )

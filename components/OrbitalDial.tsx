@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { IssPosition } from '@/lib/iss'
 
 const SIZE = 240
@@ -32,24 +32,29 @@ function issAngle(longitude: number) {
 export default function OrbitalDial() {
   const [position, setPosition] = useState<IssPosition | null>(null)
   const [signalLost, setSignalLost] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [lastUpdated, setLastUpdated] = useState<number | null>(null)
   const [now, setNow] = useState(() => Date.now())
+  const requestIdRef = useRef(0)
 
   useEffect(() => {
     let cancelled = false
 
     async function poll() {
+      const requestId = ++requestIdRef.current
       try {
         const res = await fetch('/api/iss')
         if (!res.ok) throw new Error('bad response')
         const data: IssPosition = await res.json()
-        if (cancelled) return
+        if (cancelled || requestId !== requestIdRef.current) return
         setPosition(data)
         setSignalLost(false)
         setLastUpdated(Date.now())
       } catch {
-        if (cancelled) return
+        if (cancelled || requestId !== requestIdRef.current) return
         setSignalLost(true)
+      } finally {
+        if (!cancelled && requestId === requestIdRef.current) setLoading(false)
       }
     }
 
@@ -68,10 +73,18 @@ export default function OrbitalDial() {
 
   const node = position ? toXY(issAngle(position.longitude), RINGS[2]) : null
   const secondsAgo = lastUpdated ? Math.max(0, Math.round((now - lastUpdated) / 1000)) : null
+  const statusActive = !loading && !signalLost
+  const statusLabel = loading ? 'Connecting' : signalLost ? 'Signal lost' : 'Tracking'
 
   return (
-    <div className="hidden lg:flex" aria-hidden="true" style={{ alignItems: 'center', gap: 24 }}>
-      <svg width={SIZE} height={SIZE} viewBox={`0 0 ${SIZE} ${SIZE}`} style={{ flexShrink: 0 }}>
+    <div className="hidden lg:flex" style={{ alignItems: 'center', gap: 24 }}>
+      <svg
+        aria-hidden="true"
+        width={SIZE}
+        height={SIZE}
+        viewBox={`0 0 ${SIZE} ${SIZE}`}
+        style={{ flexShrink: 0 }}
+      >
         {RINGS.map((r, i) => (
           <circle
             key={r}
@@ -186,7 +199,7 @@ export default function OrbitalDial() {
             gap: 6,
             marginBottom: 10,
             textTransform: 'uppercase',
-            color: signalLost ? 'var(--muted)' : 'var(--orange-text)',
+            color: statusActive ? 'var(--orange-text)' : 'var(--muted)',
           }}
         >
           <span
@@ -194,14 +207,16 @@ export default function OrbitalDial() {
               width: 6,
               height: 6,
               borderRadius: '50%',
-              background: signalLost ? 'var(--muted)' : 'var(--orange-graphic)',
+              background: statusActive ? 'var(--orange-graphic)' : 'var(--muted)',
               display: 'inline-block',
             }}
           />
-          {signalLost ? 'Signal lost' : 'Tracking'}
+          {statusLabel}
         </div>
 
-        {position ? (
+        {loading ? (
+          <div style={{ textTransform: 'uppercase' }}>Connecting&hellip;</div>
+        ) : position ? (
           <div
             style={{ display: 'grid', gridTemplateColumns: 'auto auto', columnGap: 10, rowGap: 4 }}
           >

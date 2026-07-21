@@ -53,15 +53,19 @@ export default function Home() {
       <div style={{ maxWidth: 560 }}>
         <p style={{ fontSize: 17, lineHeight: 1.8, color: 'var(--body)', marginBottom: 20 }}>
           Data engineer at{' '}
-          <a href="https://www.palomar.com" style={linkStyle}>
+          <SmartLink href="https://plmr.com/" style={linkStyle}>
             Palomar
-          </a>
+          </SmartLink>
           , where I build pipelines that move data cleanly from point A to point B - ideally without
           catching fire. I work with SQL, Python, Airflow, Snowflake, and DBT.
         </p>
         <p style={{ fontSize: 17, lineHeight: 1.8, color: 'var(--body)' }}>
-          Outside the terminal, I&apos;m usually doing Brazilian Jiu-Jitsu, hiking the Pacific
-          Northwest, or making something weird with my 3D printer. I occasionally{' '}
+          Outside the terminal, I&apos;m usually doing{' '}
+          <Link href="/blog/JiuJitsuBlackbelt" style={linkStyle}>
+            Brazilian Jiu-Jitsu
+          </Link>
+          , hiking the Pacific Northwest, or making something weird with my 3D printer. I
+          occasionally{' '}
           <Link href="/writing" style={linkStyle}>
             write
           </Link>

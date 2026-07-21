@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BackLink from '@/components/BackLink'
 import { getAllPosts } from '@/lib/posts'
 
 export const metadata = {
@@ -27,20 +28,7 @@ export default function Writing() {
         padding: 'clamp(40px, 6vw, 60px) 20px 80px',
       }}
     >
-      <Link
-        href="/"
-        style={{
-          fontFamily: 'var(--font-mono), monospace',
-          fontSize: 11,
-          letterSpacing: '0.1em',
-          color: 'var(--orange-text)',
-          textDecoration: 'underline',
-          textUnderlineOffset: 3,
-          textTransform: 'uppercase',
-        }}
-      >
-        &larr; Tony Nicola
-      </Link>
+      <BackLink href="/">&larr; Tony Nicola</BackLink>
 
       <h1
         style={{
