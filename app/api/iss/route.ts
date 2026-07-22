@@ -8,6 +8,7 @@ import {
 } from 'satellite.js'
 import type { IssPosition } from '@/lib/iss'
 import { getIssTle } from '@/lib/tle'
+import { lookupRegion } from '@/lib/landLookup'
 
 export const revalidate = 0
 
@@ -24,7 +25,7 @@ export async function GET() {
     const gmst = gstime(now)
     const geodetic = eciToGeodetic(position, gmst)
 
-    const result: IssPosition = {
+    const numeric = {
       latitude: degreesLat(geodetic.latitude),
       longitude: degreesLong(geodetic.longitude),
       altitude: geodetic.height,
@@ -33,12 +34,28 @@ export async function GET() {
 
     // A corrupted TLE can make SGP4 return NaN/Infinity without throwing -
     // treat that the same as a failed fetch rather than serving broken data.
-    if (!Object.values(result).every(Number.isFinite)) {
+    if (!Object.values(numeric).every(Number.isFinite)) {
       throw new Error('non-finite position computed')
+    }
+
+    const result: IssPosition = {
+      ...numeric,
+      region: safeLookupRegion(numeric.latitude, numeric.longitude),
     }
 
     return Response.json(result)
   } catch {
     return Response.json({ error: 'fetch failed' }, { status: 502 })
+  }
+}
+
+// Region is a nice-to-have derived from an already-valid position - a defect
+// in the lookup itself (bad topology data, an unanticipated geometry edge
+// case) shouldn't turn perfectly good telemetry into a full failed response.
+function safeLookupRegion(lat: number, lon: number): string {
+  try {
+    return lookupRegion(lat, lon)
+  } catch {
+    return 'Unknown'
   }
 }

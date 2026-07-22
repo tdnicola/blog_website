@@ -3,4 +3,5 @@ export interface IssPosition {
   longitude: number
   altitude: number
   velocity: number
+  region: string
 }
