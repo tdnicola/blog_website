@@ -155,24 +155,3 @@ body {
 .prose h3 .anchor:focus {
   opacity: 1;
 }
-
-/* Orbital dial */
-@keyframes sp-dial-sweep {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.sp-dial-sweep {
-  animation: sp-dial-sweep 24s linear infinite;
-  transform-origin: center;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .sp-dial-sweep {
-    animation: none;
-  }
-}

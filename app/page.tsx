@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SmartLink from '@/components/SmartLink'
 import StatusLine from '@/components/StatusLine'
-import OrbitalDial from '@/components/OrbitalDial'
+import IssJourney from '@/components/IssJourney'
 import siteMetadata from '@/data/siteMetadata.json'
 
 const linkStyle = {
@@ -50,6 +50,7 @@ export default function Home() {
       <div
         style={{
           display: 'flex',
+          flexWrap: 'wrap',
           justifyContent: 'space-between',
           alignItems: 'center',
           gap: 24,
@@ -73,7 +74,7 @@ export default function Home() {
           Nicola
         </h1>
 
-        <OrbitalDial />
+        <IssJourney />
       </div>
 
       <div style={{ maxWidth: 560 }}>
