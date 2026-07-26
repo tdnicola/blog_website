@@ -21,6 +21,7 @@ export function useIssPosition(): IssPositionState {
 
   useEffect(() => {
     let cancelled = false
+    let intervalId: ReturnType<typeof setInterval> | null = null
 
     async function poll() {
       const requestId = ++requestIdRef.current
@@ -40,11 +41,39 @@ export function useIssPosition(): IssPositionState {
       }
     }
 
+    function startPolling() {
+      if (intervalId) return
+      intervalId = setInterval(poll, POLL_MS)
+    }
+
+    function stopPolling() {
+      if (intervalId) {
+        clearInterval(intervalId)
+        intervalId = null
+      }
+    }
+
+    // Don't rely on browser timer throttling to be considerate of a
+    // backgrounded/hidden tab - that behavior is inconsistent across
+    // browsers and platforms. Pause outright when hidden, and poll
+    // immediately (rather than waiting out a stale interval) on return.
+    function handleVisibilityChange() {
+      if (document.hidden) {
+        stopPolling()
+      } else {
+        poll()
+        startPolling()
+      }
+    }
+
     poll()
-    const interval = setInterval(poll, POLL_MS)
+    startPolling()
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+
     return () => {
       cancelled = true
-      clearInterval(interval)
+      stopPolling()
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
     }
   }, [])
 
