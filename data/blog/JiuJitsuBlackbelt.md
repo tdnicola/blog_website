@@ -6,7 +6,7 @@ draft: false
 summary: 'My Brazilian Jiu-Jitsu Odyssey: White to Black Belt'
 ---
 
-My path led me to the world of Brazilian Jiu-Jitsu (BJJ) in 2011. Along the way, I've faced challenges, changes, and even burnout, but I've also experienced immense personal growth. Here's a timeline of my journey from white to black belt.
+My path led me to the world of Brazilian Jiu-Jitsu (BJJ) in 2011. Along the way I moved five times, burned out on teaching, and became a father. Here's a timeline of my journey from white to black belt.
 
 - **Started BJJ:** 2011
 - **Blue Belt:** 2013 (?)
@@ -68,7 +68,7 @@ On August 5 2023 I received my black belt from Professor Justin. It was a fun ti
 
 I think about BJJ a lot still. Though now, I'm lucky to get in and train once a week. I enjoy being a father with my son. BJJ has shifted down in my priorities due to life changes, and I'm okay with that. I look forward to sharing it with my son when he's old enough.
 
-There are a few things that BJJ has taught me, These are universal to all things not just BJJ:
+Recaps from BJJ
 
 - Stick with it and you will get better.
 - Put in more time and you will get better.
