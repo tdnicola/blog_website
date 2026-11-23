@@ -32,7 +32,7 @@ export default function IssJourney() {
   const secondsAgo = lastUpdated ? Math.max(0, Math.round((now - lastUpdated) / 1000)) : null
 
   return (
-    <div style={{ fontFamily: 'var(--font-mono), monospace', minWidth: 220 }}>
+    <aside className="iss-panel" aria-label="Live International Space Station position">
       <div
         style={{
           fontSize: 12,
@@ -130,6 +130,6 @@ export default function IssJourney() {
           Updated {secondsAgo}s ago
         </div>
       )}
-    </div>
+    </aside>
   )
 }
