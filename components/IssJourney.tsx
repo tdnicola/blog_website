@@ -4,9 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 import { useIssPosition } from '@/components/useIssPosition'
 
 const label = {
-  fontSize: 10.5,
-  letterSpacing: '0.06em',
-  textTransform: 'uppercase' as const,
+  fontSize: 12,
+  letterSpacing: 0,
 }
 
 export default function IssJourney() {
@@ -27,45 +26,19 @@ export default function IssJourney() {
     return () => clearInterval(tick)
   }, [])
 
-  const statusActive = !loading && !signalLost
-  const statusLabel = loading ? 'Connecting' : signalLost ? 'Signal lost' : 'Tracking'
   const secondsAgo = lastUpdated ? Math.max(0, Math.round((now - lastUpdated) / 1000)) : null
 
   return (
     <aside className="iss-panel" aria-label="Live International Space Station position">
       <div
         style={{
-          fontSize: 12,
+          fontSize: 12.5,
           fontWeight: 600,
-          letterSpacing: '0.05em',
           color: 'var(--ink)',
-          textTransform: 'uppercase',
           marginBottom: 10,
         }}
       >
         International Space Station
-      </div>
-
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 6,
-          marginBottom: 16,
-          color: statusActive ? 'var(--orange-text)' : 'var(--muted)',
-          ...label,
-        }}
-      >
-        <span
-          style={{
-            width: 6,
-            height: 6,
-            borderRadius: '50%',
-            background: statusActive ? 'var(--orange-graphic)' : 'var(--muted)',
-            display: 'inline-block',
-          }}
-        />
-        {statusLabel}
       </div>
 
       {position ? (
@@ -99,27 +72,16 @@ export default function IssJourney() {
             km traveled this session
           </div>
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'auto auto',
-              columnGap: 10,
-              rowGap: 4,
-              color: 'var(--muted)',
-              ...label,
-            }}
-          >
-            <span>Lat</span>
-            <span style={{ color: 'var(--ink)' }}>{position.latitude.toFixed(2)}</span>
-            <span>Lon</span>
-            <span style={{ color: 'var(--ink)' }}>{position.longitude.toFixed(2)}</span>
-            <span>Alt</span>
-            <span style={{ color: 'var(--ink)' }}>{Math.round(position.altitude)} km</span>
-            <span>Vel</span>
-            <span style={{ color: 'var(--ink)' }}>
-              {Math.round(position.velocity).toLocaleString('en-US')} km/h
-            </span>
-          </div>
+          <dl className="iss-data">
+            <dt>Lat</dt>
+            <dd>{position.latitude.toFixed(2)}</dd>
+            <dt>Lon</dt>
+            <dd>{position.longitude.toFixed(2)}</dd>
+            <dt>Alt</dt>
+            <dd>{Math.round(position.altitude)} km</dd>
+            <dt>Vel</dt>
+            <dd>{Math.round(position.velocity).toLocaleString('en-US')} km/h</dd>
+          </dl>
         </>
       ) : (
         <div style={{ ...label, color: 'var(--muted)' }}>{loading ? 'Connecting…' : 'No data'}</div>
