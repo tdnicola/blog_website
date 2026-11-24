@@ -13,23 +13,22 @@ Check it out at: [github fitbit](https://tdnicola.github.io/Fitbit_api/)
 
 > Web app for displaying personal Fitbit data. Or Guest Data if no fitbit login.
 
-Problem ❓:  
+Problem ❓:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wanted to see my fitbit information in a different way other than the app/watch.
 
-
-Solution ✔️:  
+Solution ✔️:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create a web app for it.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I had a lot of fun with this app. It was fun to start to use data that I was interested in and make it more visual than the watch itself. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I had a lot of fun with this app. It was fun to start to use data that I was interested in and make it more visual than the watch itself.
 
-Guest user will show information from a state of my fitbit device: 
+Guest user will show information from a state of my fitbit device:
 
-![fitbitguestdata](https://i.ibb.co/3YW0VB4/fitbitapi.png "fitbit guest data picture")
+![fitbitguestdata](https://i.ibb.co/3YW0VB4/fitbitapi.png 'fitbit guest data picture')
 
-Login with credentials will redirect user to the fitbit authentication login screen. Once authorized will display their data: 
+Login with credentials will redirect user to the fitbit authentication login screen. Once authorized will display their data:
 
-![fitbitApi](https://i.ibb.co/nzv9kzF/fitbitconsent.png "FitbitApi authentication")
+![fitbitApi](https://i.ibb.co/nzv9kzF/fitbitconsent.png 'FitbitApi authentication')
 
 If you're interested yourself at installing/using use below information.
 
@@ -63,6 +62,6 @@ npm start
     "recharts"
 ```
 
-
-> ## [code:](https://github.com/tdnicola/Fitbit_api)  
-> ## [site:](https://tdnicola.github.io/Fitbit_api/)  
+> ## [code:](https://github.com/tdnicola/Fitbit_api)
+>
+> ## [site:](https://tdnicola.github.io/Fitbit_api/)
