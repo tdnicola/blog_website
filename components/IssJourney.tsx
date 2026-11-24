@@ -29,7 +29,7 @@ export default function IssJourney() {
   const secondsAgo = lastUpdated ? Math.max(0, Math.round((now - lastUpdated) / 1000)) : null
 
   return (
-    <aside className="iss-panel" aria-label="Live International Space Station position">
+    <aside className="iss-panel" aria-label="International Space Station position">
       <div
         style={{
           fontSize: 12.5,
@@ -43,7 +43,9 @@ export default function IssJourney() {
 
       {position ? (
         <>
-          <div style={{ ...label, color: 'var(--muted)', marginBottom: 4 }}>Currently over</div>
+          <div style={{ ...label, color: 'var(--muted)', marginBottom: 4 }}>
+            {signalLost ? 'Signal lost · Last known position' : 'Currently over'}
+          </div>
           <div
             style={{
               fontSize: 22,
