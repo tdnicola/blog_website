@@ -58,11 +58,7 @@ export default function Home() {
         <IssJourney />
       </div>
 
-      <section className="home-bio" aria-labelledby="about-label">
-        <div id="about-label" className="home-section-label">
-          <span aria-hidden="true" />
-          About
-        </div>
+      <div className="home-bio">
         <p style={{ fontSize: 17, lineHeight: 1.8, color: 'var(--body)', marginBottom: 20 }}>
           Data engineer at{' '}
           <SmartLink href="https://plmr.com/" style={linkStyle}>
@@ -95,7 +91,7 @@ export default function Home() {
           </SmartLink>
           .
         </p>
-      </section>
+      </div>
     </main>
   )
 }
