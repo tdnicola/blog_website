@@ -8,6 +8,8 @@
     "serve": "next start",
     "analyze": "ANALYZE=true next build",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit --incremental false",
+    "format:check": "prettier --check .",
     "prepare": "husky install"
   },
   "dependencies": {
