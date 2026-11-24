@@ -1,9 +1,16 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { Orbitron } from 'next/font/google'
 import SmartLink from '@/components/SmartLink'
 import StatusLine from '@/components/StatusLine'
 import IssJourney from '@/components/IssJourney'
 import siteMetadata from '@/data/siteMetadata.json'
+
+const displayFont = Orbitron({
+  subsets: ['latin'],
+  weight: '600',
+  display: 'swap',
+})
 
 const linkStyle = {
   color: 'var(--orange-text)',
@@ -33,13 +40,7 @@ const personJsonLd = {
 
 export default function Home() {
   return (
-    <main
-      style={{
-        maxWidth: 900,
-        margin: '0 auto',
-        padding: 'clamp(40px, 6vw, 60px) 20px 80px',
-      }}
-    >
+    <main className="home-shell">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
@@ -47,28 +48,8 @@ export default function Home() {
 
       <StatusLine />
 
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          gap: 24,
-          margin: '32px 0 56px',
-        }}
-      >
-        <h1
-          style={{
-            fontFamily: 'var(--font-mono), monospace',
-            fontSize: 'clamp(48px, 10vw, 108px)',
-            fontWeight: 600,
-            letterSpacing: '0.02em',
-            lineHeight: 1,
-            color: 'var(--ink)',
-            textTransform: 'uppercase',
-            margin: 0,
-          }}
-        >
+      <div className="home-hero">
+        <h1 className={`${displayFont.className} home-name`}>
           Tony
           <br />
           Nicola
@@ -77,7 +58,7 @@ export default function Home() {
         <IssJourney />
       </div>
 
-      <div style={{ maxWidth: 560 }}>
+      <div className="home-bio">
         <p style={{ fontSize: 17, lineHeight: 1.8, color: 'var(--body)', marginBottom: 20 }}>
           Data engineer at{' '}
           <SmartLink href="https://plmr.com/" style={linkStyle}>

@@ -28,17 +28,8 @@ export default function StatusLine() {
   }, [])
 
   return (
-    <p
-      style={{
-        fontFamily: 'var(--font-mono), monospace',
-        fontSize: 12,
-        letterSpacing: '0.1em',
-        color: 'var(--orange-text)',
-        textTransform: 'uppercase',
-        margin: 0,
-      }}
-    >
-      {time ? `PT ${time}` : 'PT --:--:--'} - STATUS: ONLINE
+    <p className="status-line">
+      <span>{time ? `Local time, PT ${time}` : 'Local time, PT --:--:--'}</span>
     </p>
   )
 }
